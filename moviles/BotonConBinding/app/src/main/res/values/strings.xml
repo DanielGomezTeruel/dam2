@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BotonConBinding</string>
+    <string name="button_text">\"botoncillo\"</string>
 </resources>
