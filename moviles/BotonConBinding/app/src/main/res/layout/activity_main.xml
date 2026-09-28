@@ -7,20 +7,382 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/botoncillo"
-        style="?attr/materialButtonTonalStyle"
+    <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_text"
-        android:checkable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/titulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <TextView
+        android:id="@+id/tag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tag1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineTitulo"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineDatos1"
+        android:layout_marginStart="20dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#03b1fc"
+    />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/formNombre"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toEndOf="@id/tag1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineTitulo"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineDatos1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/formNombreContenido"
+        >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formNombreContenido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:backgroundTint="#03b1fc"
+                />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDatos1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDatos2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/formCorreo"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineDatos2"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineCorreo1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/formCorreoContenido"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/formCorreoContenido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:backgroundTint="#03b1fc"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCorreo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCorreo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pts1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineCorreo2"
+        app:layout_constraintEnd_toStartOf="@id/guidelinePts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag2"
+        android:hint="@string/pts"
+        android:layout_marginStart="10dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
         />
 
+    <TextView
+    android:id="@+id/tag2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/tag2"
+    app:layout_constraintStart_toEndOf="@id/guidelinePts"
+    app:layout_constraintTop_toTopOf="@id/guidelineCorreo2"
+    app:layout_constraintBottom_toTopOf="@id/guidelineTag2"
+    android:layout_marginStart="20dp"
+    android:textSize="17sp"
+    android:textStyle="bold"
+    android:textColor="#03b1fc"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePreguntaTag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <TextView
+        android:id="@+id/preguntaTag2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/preguntaTag2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag2"
+        app:layout_constraintEnd_toStartOf="@id/guidelinePreguntaTag2"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag3.0"
+        android:layout_marginStart="10dp"
+        />
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/guidelinePreguntaTag2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag2"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag3.0"
+        android:layout_marginStart="10dp"
+        >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio2"
+            />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio3"
+            />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag3.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pts2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.0"
+        app:layout_constraintEnd_toStartOf="@id/guidelinePts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag3.1"
+        android:hint="@string/pts"
+        android:layout_marginStart="10dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/tag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tag3"
+        app:layout_constraintStart_toEndOf="@id/guidelinePts"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.0"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag3.1"
+        android:layout_marginStart="20dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#03b1fc"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag3.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/preguntaTag3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/preguntaTag3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.1"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag3.2"
+        android:layout_marginStart="10dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag3.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
+        app:layout_constraintStart_toStartOf="parent">
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/checkBox1"
+        android:layout_marginStart="10dp"
+        />
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/checkBox2"
+        />
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/checkBox3"
+        />
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/checkBox4"
+        />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag4.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pts3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag4.0"
+        app:layout_constraintEnd_toStartOf="@id/guidelinePts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag4.1"
+        android:hint="@string/pts"
+        android:layout_marginStart="10dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/tag4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tag4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag4.0"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTag4.1"
+        android:layout_marginEnd="10dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#03b1fc"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTag4.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/formDesarrollo"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineTag4.1"
+        app:layout_constraintBottom_toTopOf="@id/btn_send"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/formDesarrolloContenido"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/formDesarrolloContenido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:maxLines="5"
+            android:backgroundTint="#03b1fc"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/send_btn"
+        android:checkable="true"
+        app:layout_constraintTop_toBottomOf="@id/formDesarrollo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="#03b1fc"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

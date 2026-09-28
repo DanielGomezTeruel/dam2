@@ -1,4 +1,38 @@
 <resources>
     <string name="app_name">BotonConBinding</string>
-    <string name="button_text">\"botoncillo\"</string>
+    <string name="send_btn">Enviar Examen</string>
+    <string name="titulo">Examen de Android</string>
+    <string name="tag1">1. Datos de Alumno</string>
+    <string name="tag2">2. Selecciona la respuesta correcta</string>
+    <string name="tag3">3. Selecciona todas las que apliquen</string>
+    <string name="tag4">4. Pregunta de desarrollo</string>
+    <string name="formNombreContenido">Nombre completo</string>
+    <string name="formCorreoContenido">Correo electrónico</string>
+    <string name="formDesarrolloContenido">Explica qué es Dependency Injection</string>
+    <string name="pts">Pts</string>
+    <string name="preguntaTag2">¿Qué componente se utiliza para crear diseños flexibles?</string>
+    <string name="preguntaTag3">¿Cuáles son componentes de la arquitectura Android?</string>
+    <string name="radio1">LinearLayout</string>
+    <string name="radio2">ConstraintLayout</string>
+    <string name="radio3">FrameLayout</string>
+    <string name="checkBox1">Activity</string>
+    <string name="checkBox2">ViewModel</string>
+    <string name="checkBox3">JavaScript</string>
+    <string name="checkBox4">Repository</string>
+    <string name="btn1">+1</string>
+    <string name="btn2">+2</string>
+    <string name="btn3">+3</string>
+    <string name="equipo_1">Equipo 1</string>
+    <string name="equipo_2">Equipo 2</string>
+    <string name="descPlay">playBtn</string>
+    <string name="marcador1">34</string>
+    <string name="marcador2">18</string>
+    <string name="reloj">10:00</string>
+    <string name="puesto">1.º</string>
+    <string name="plusBtn">+</string>
+    <string name="faltas">0</string>
+    <string name="editar">EDITAR</string>
+    <string name="compartir">COMPARTIR</string>
+
+
 </resources>

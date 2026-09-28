@@ -25,12 +25,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-//        val botoncillo = binding.botoncillo
-//
-//        botoncillo.setOnClickListener {
-//            botoncillo.text = "buenas"
-//        }
-
     }
 }
