@@ -33,6 +33,7 @@
     <string name="faltas">0</string>
     <string name="editar">EDITAR</string>
     <string name="compartir">COMPARTIR</string>
+    <string name="cross">cross\n</string>
 
 
 </resources>

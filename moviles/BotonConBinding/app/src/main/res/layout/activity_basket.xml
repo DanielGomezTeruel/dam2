@@ -127,7 +127,7 @@
     <ImageButton
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/descPlay"
+        android:contentDescription="@string/cross"
         android:background="@android:color/transparent"
         android:src="@drawable/cross"
         android:scaleType="fitCenter"
@@ -251,7 +251,7 @@
         android:id="@+id/faltasX"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/descPlay"
+        android:contentDescription="@string/cross"
         android:background="@android:color/transparent"
         android:src="@drawable/cross"
         android:scaleType="fitCenter"
