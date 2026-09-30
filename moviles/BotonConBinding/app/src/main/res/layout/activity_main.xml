@@ -268,38 +268,44 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
-        app:layout_constraintStart_toStartOf="parent">
-    <CheckBox
+
+        <CheckBox
         android:id="@+id/checkBox1"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/checkBox1"
         android:layout_marginStart="10dp"
-        />
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/checkBox2"
-        />
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/checkBox3"
-        />
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/checkBox4"
-        />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/checkBox2"
+            />
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/checkBox2"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
+            app:layout_constraintStart_toEndOf="@id/checkBox1"
+            app:layout_constraintEnd_toStartOf="@id/checkBox3"
+            />
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/checkBox3"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
+            app:layout_constraintStart_toEndOf="@id/checkBox2"
+            app:layout_constraintEnd_toStartOf="@id/checkBox4"
+            />
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/checkBox4"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTag3.2"
+            app:layout_constraintStart_toEndOf="@id/checkBox3"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTag4.0"

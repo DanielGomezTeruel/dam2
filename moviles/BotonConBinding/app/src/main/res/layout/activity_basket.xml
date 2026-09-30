@@ -30,7 +30,7 @@
         android:fontFamily="@font/digital"
         android:textSize="70sp"
         android:textAlignment="center"
-        android:textColor="#ff0000"
+        android:textColor="@color/numbersRed"
         />
 
     <TextView
@@ -121,7 +121,7 @@
         android:fontFamily="@font/digital"
         android:textSize="130sp"
         android:textAlignment="textEnd"
-        android:textColor="#00ff2a"
+        android:textColor="@color/numbersGreen"
         />
 
     <ImageButton
@@ -213,7 +213,7 @@
         android:fontFamily="@font/digital"
         android:textSize="130sp"
         android:textAlignment="textEnd"
-        android:textColor="#00ff2a"
+        android:textColor="@color/numbersGreen"
         />
 
     <Button
@@ -244,7 +244,7 @@
         android:fontFamily="@font/digital"
         android:textSize="55sp"
         android:textAlignment="center"
-        android:textColor="#f2ff00"
+        android:textColor="@color/numbersYellow"
         />
 
     <ImageButton
@@ -274,7 +274,7 @@
         android:fontFamily="@font/digital"
         android:textSize="55sp"
         android:textAlignment="center"
-        android:textColor="#f2ff00"
+        android:textColor="@color/numbersYellow"
         />
 
     <Button
@@ -302,7 +302,7 @@
         app:layout_constraintStart_toStartOf="@id/guidelineVert0.1"
         app:layout_constraintTop_toBottomOf="@id/guidelineHor9"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="#002fff"
+        android:backgroundTint="@color/btnColor"
         android:textSize="20dp"
         android:paddingHorizontal="18dp"
         />
@@ -317,7 +317,7 @@
         app:layout_constraintEnd_toEndOf="@id/guidelineVert5"
         app:layout_constraintTop_toBottomOf="@id/guidelineHor9"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="#002fff"
+        android:backgroundTint="@color/btnColor"
         android:textSize="20dp"
         android:paddingHorizontal="18dp"
         />
