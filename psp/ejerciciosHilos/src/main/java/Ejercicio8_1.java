@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,13 +13,13 @@ public class Ejercicio8_1 {
 
         CountDownLatch salida = new CountDownLatch(1);
 
-        Thread[] corredores = new Thread[numCorredores];
+        List<Thread> corredores = new ArrayList<>();
 
         for (int i = 0; i < numCorredores; i++) {
 
             final int numero = i + 1;
 
-            corredores[i] = new Thread(() -> {
+            Thread corredor = new Thread(() -> {
 
                 try {
 
@@ -37,24 +39,25 @@ public class Ejercicio8_1 {
 
             }, "corredor-" + numero);
 
-            corredores[i].start();
+            corredores.add(corredor);
         }
 
-        // El juez espera a que los 5 estén preparados
-        preparados.await();
+        corredores.forEach(Thread::start);
 
-        System.out.println("Todos los corredores están preparados.");
+        corredoresListos.await();
 
-        // El juez da la salida
-        System.out.println("🏁 ¡SALIDA!");
+        System.out.println("el juez da la salida");
 
         salida.countDown();
 
-        // Esperamos a que todos los corredores terminen
-        for (Thread corredor : corredores) {
-            corredor.join();
-        }
+        corredores.forEach(hilo->{
+            try {
+                hilo.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
-        System.out.println("Todos los corredores han empezado.");
+        System.out.println("todos los corredores han salido");
     }
 }
