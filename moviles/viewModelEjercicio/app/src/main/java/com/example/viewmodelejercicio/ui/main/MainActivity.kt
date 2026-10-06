@@ -7,13 +7,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.viewmodelejercicio.R
 import com.example.viewmodelejercicio.databinding.ActivityMainBinding
 import com.example.viewmodelejercicio.di.AppModule
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel: MainViewModel by viewModels { MainViewModelFactory(AppModule.dameNombreUseCase) };
+    private val mainViewModel: MainViewModel by viewModels { MainViewModelFactory(AppModule.dameNombreUseCase, AppModule.cargarAnimalesUseCase) };
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) };
 
@@ -29,10 +30,21 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        configRecycler()
+
         observarEstado()
 
         setupEventos()
 
+    }
+
+    private fun configRecycler() {
+        binding.listado.layoutManager = LinearLayoutManager(this)
+
+        val adapter = AnimalAdapter()
+        binding.listado.adapter = adapter
+
+       adapter.submitList()
     }
 
     private fun setupEventos() {
@@ -42,12 +54,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observarEstado() {
-        mainViewModel.state.observe(this,{
-            it?.nombre.let{
+        mainViewModel.state.observe(this,{state ->
+            state?.nombre.let{
                 binding.textView.text = it
             }
-            it?.error.let{ error->
-                Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+
+            state?.animales.let{
+
+            }
+            state?.error?.let{
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
         })
     }
