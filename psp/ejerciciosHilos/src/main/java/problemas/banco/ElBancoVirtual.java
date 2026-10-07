@@ -5,17 +5,68 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class ElBancoVirtual {
+
+    private static final Random random = new Random();
+
     public static void main(String[] args) {
-        Random random = new Random();
-        CuentaBancaria cuenta = new CuentaBancaria(10000);
 
-        LocalDateTime startTime = LocalDateTime.now();
+        //Soluciçon con ReentrantLock
 
+        CuentaReentrantLock cuentaLock = new CuentaReentrantLock(10000);
+
+        LocalDateTime startTimeReentrant = LocalDateTime.now();
+
+        List<Thread> clientesReentrantLock = crearClientes(cuentaLock);
+
+        clientesReentrantLock.forEach(Thread::start);
+
+        clientesReentrantLock.forEach(cliente->{
+            try {
+                cliente.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        System.out.println("---------ReentrantLock----------");
+        System.out.println("Saldo final: "+cuentaLock.consultarSaldo());
+        System.out.println("Tiempo: "+Duration.between(startTimeReentrant,LocalDateTime.now()).toMillis()+"ms");
+
+        int operacionesFallidasLock = cuentaLock.historial.stream().filter(message-> message.contains("fallida")).toList().size();
+        System.out.println("Operaciones realizadas: "+(500-operacionesFallidasLock)+"/500");
+
+
+        //Solución con synchronized
+
+        CuentaSynchronized cuentaSynchronized = new CuentaSynchronized(10000);
+
+        LocalDateTime startTimeSynchronized = LocalDateTime.now();
+
+        List<Thread> clientesSynchronized = crearClientes(cuentaSynchronized);
+
+        clientesSynchronized.forEach(Thread::start);
+
+        clientesSynchronized.forEach(cliente->{
+            try {
+                cliente.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        System.out.println("---------Synchronized----------");
+        System.out.println("Saldo final: "+cuentaSynchronized.consultarSaldo());
+        System.out.println("Tiempo: "+Duration.between(startTimeSynchronized,LocalDateTime.now()).toMillis()+"ms");
+
+        int operacionesFallidasSynchronized = cuentaSynchronized.historial.stream().filter(message-> message.contains("fallida")).toList().size();
+        System.out.println("Operaciones realizadas: "+(500-operacionesFallidasSynchronized)+"/500");
+
+    }
+
+    private static List<Thread> crearClientes(Cuenta cuenta) {
         List<Thread> clientes = new ArrayList<>();
-
         for (int i = 0; i < 50; i++) {
             Thread cliente = new Thread(()->{
                 for (int j = 0; j < 10; j++) {
@@ -36,22 +87,6 @@ public class ElBancoVirtual {
             });
             clientes.add(cliente);
         }
-
-        clientes.forEach(Thread::start);
-
-        clientes.forEach(cliente->{
-            try {
-                cliente.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        });
-
-        System.out.println("---------ReentrantLock----------");
-        System.out.println("Saldo final: "+cuenta.consultarSaldo());
-        System.out.println("Tiempo: "+Duration.between(startTime,LocalDateTime.now()).toMillis()+"ms");
-
-        int operacionesFallidas = cuenta.historial.stream().filter(message-> message.contains("fallida")).toList().size();
-        System.out.println("Operaciones realizadas: "+(500-operacionesFallidas)+"/500");
+        return clientes;
     }
 }

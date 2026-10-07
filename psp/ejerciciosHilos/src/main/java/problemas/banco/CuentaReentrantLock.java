@@ -7,15 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class CuentaBancaria {
-    private double saldo;
+public class CuentaReentrantLock implements Cuenta{
+    private double saldo=10000;
     List<String> historial = new ArrayList<>();
     ReentrantLock lock = new ReentrantLock();
 
-    public CuentaBancaria(double saldo){
+    public CuentaReentrantLock(double saldo){
         this.saldo=saldo;
     }
 
+    @Override
     public boolean retirar(double cantidad){
         lock.lock();
         try {
@@ -37,6 +38,8 @@ public class CuentaBancaria {
             lock.unlock();
         }
     }
+
+    @Override
     public void ingresar(double cantidad){
         lock.lock();
         try {
@@ -46,6 +49,8 @@ public class CuentaBancaria {
             lock.unlock();
         }
     }
+
+    @Override
     public double consultarSaldo(){
         lock.lock();
         try {
@@ -55,6 +60,8 @@ public class CuentaBancaria {
             lock.unlock();
         }
     }
+
+    @Override
     public List<String> obtenerHistorial(){
         return historial;
     }
