@@ -1,17 +1,18 @@
 package main.parking;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+
 public class Parking {
+
+
 
     public static final int PLAZAS = 10;
     public static final int NUM_COCHES = 100;
     public final Semaphore parking = new Semaphore(PLAZAS);
     public final ExecutorService executor = Executors.newFixedThreadPool(20);
+    public final BlockingQueue<Thread> cola = new ArrayBlockingQueue<>(10);
 
     public final AtomicInteger contadorCochesQueAparcan = new AtomicInteger(0);
     public final AtomicInteger contadorCochesQueSeVan = new AtomicInteger(0);
@@ -19,6 +20,7 @@ public class Parking {
 
     public void runCoche(Semaphore semaphore)
     {
+
         if(semaphore.tryAcquire())
         {
             try {
@@ -27,6 +29,7 @@ public class Parking {
                 throw new RuntimeException(e);
             }
             contadorCochesQueAparcan.incrementAndGet();
+
         }else
         {
             IO.println("Me voy");
@@ -37,7 +40,9 @@ public class Parking {
     public void crearCoches()
     {
         for (int i = 0; i < NUM_COCHES; i++) {
+
             executor.submit(() -> this.runCoche(parking));
+
         }
     }
 
