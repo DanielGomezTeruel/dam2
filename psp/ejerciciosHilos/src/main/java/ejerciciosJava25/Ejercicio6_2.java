@@ -1,4 +1,4 @@
-/*Ejercicio 6.2 — "Contador de palabras concurrente"
+package ejerciciosJava25;/*Ejercicio 6.2 — "Contador de palabras concurrente"
 Varios hilos leen fragmentos distintos de un texto grande y
 actualizan un ConcurrentHashMap<String, Integer> con la frecuencia
 de cada palabra, usando merge(palabra, 1, Integer::sum).

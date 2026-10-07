@@ -1,3 +1,5 @@
+package ejerciciosJava25;
+
 public class Ejercicio1_1_1 {
 
 

@@ -1,3 +1,5 @@
+package ejerciciosJava25;
+
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class Ejercicio6_1 {

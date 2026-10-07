@@ -1,4 +1,4 @@
-/*Ejercicio 5.1 — "Parking con plazas limitadas"
+package ejerciciosJava25;/*Ejercicio 5.1 — "Parking con plazas limitadas"
 Un parking tiene 3 plazas. Modela cada plaza con un Semaphore(3).
 Simula 10 coches (hilos) que intentan entrar (acquire()),
 permanecen un tiempo aleatorio y salen (release()).

@@ -1,3 +1,5 @@
+package ejerciciosJava25;
+
 public class Ejercicio3_1 {
     public static int saldoBancario=0;
 

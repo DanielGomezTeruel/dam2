@@ -1,8 +1,10 @@
-public class Ejercicio3_2_2 {
+package ejerciciosJava25;
+
+public class Ejercicio3_2 {
     public static void main(String[] args) throws InterruptedException {
 
-        CuentaBancaria2 a = new CuentaBancaria2(1, 1000);
-        CuentaBancaria2 b = new CuentaBancaria2(2, 1000);
+        CuentaBancaria a = new CuentaBancaria(1, 1000);
+        CuentaBancaria b = new CuentaBancaria(2, 1000);
 
         Thread hilo1 = new Thread(() -> a.transferir(b, 100),"cuenta A");
 
@@ -15,38 +17,26 @@ public class Ejercicio3_2_2 {
         hilo2.join();
 
         Thread.sleep(1000);
-        System.out.println("Transacciones finalizadas sin deadlock");
     }
 }
 
-class CuentaBancaria2{
+class CuentaBancaria{
     private final int id;
     private int saldo;
 
-    public CuentaBancaria2(int id, int saldo) {
+    public CuentaBancaria(int id, int saldo) {
         this.id = id;
         this.saldo = saldo;
     }
 
-    public void transferir(CuentaBancaria2 destino, int cantidad) {
-
-        Object lock1=null;
-        Object lock2=null;
-        if(destino.id>this.id){
-            lock1=destino;
-            lock2=this;
-        }else{
-            lock1=this;
-            lock2=destino;
-        }
-
-        synchronized (lock1) {
+    public void transferir(CuentaBancaria destino, int cantidad) {
+        synchronized (this) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            synchronized (lock2) {
+            synchronized (destino) {
                 if (saldo >= cantidad) {
                     saldo -= cantidad;
                     destino.saldo += cantidad;
@@ -55,4 +45,3 @@ class CuentaBancaria2{
         }
     }
 }
-
