@@ -12,7 +12,7 @@ public class ElBancoVirtual {
 
     public static void main(String[] args) {
 
-        //Soluciçon con ReentrantLock
+        //Solución con ReentrantLock
 
         CuentaReentrantLock cuentaLock = new CuentaReentrantLock(10000);
 
