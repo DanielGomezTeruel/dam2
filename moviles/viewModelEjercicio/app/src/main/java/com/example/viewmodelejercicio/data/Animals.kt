@@ -13,4 +13,8 @@ object Animals {
     fun dameAnimal() = animales[1]
 
     fun dameLista() = animales.toList()
+
+    fun deleteAnimal(animal : Animal){
+        animales.remove(animal)
+    }
 }

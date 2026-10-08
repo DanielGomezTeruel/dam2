@@ -14,7 +14,11 @@ import com.example.viewmodelejercicio.di.AppModule
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel: MainViewModel by viewModels { MainViewModelFactory(AppModule.dameNombreUseCase, AppModule.cargarAnimalesUseCase) };
+    private val mainViewModel: MainViewModel by viewModels { MainViewModelFactory(
+        AppModule.dameNombreUseCase,
+        AppModule.cargarAnimalesUseCase,
+        AppModule.deleteAnimalUseCase,
+    ) };
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) };
 
@@ -41,10 +45,10 @@ class MainActivity : AppCompatActivity() {
     private fun configRecycler() {
         binding.listado.layoutManager = LinearLayoutManager(this)
 
-        val adapter = AnimalAdapter()
+        val adapter = AnimalAdapter({mainViewModel.handleDeleteAnimal(it)})
         binding.listado.adapter = adapter
 
-       adapter.submitList()
+
     }
 
     private fun setupEventos() {

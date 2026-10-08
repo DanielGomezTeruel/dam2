@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.viewmodelejercicio.databinding.ItemAnimalBinding
 import com.example.viewmodelejercicio.domain.model.Animal
 
-class AnimalAdapter ()
+class AnimalAdapter (
+    val delAnimal : (Animal) -> Unit,
+)
     : ListAdapter<Animal, AnimalAdapter.AnimalViewHolder>(AnimalDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -19,23 +21,30 @@ class AnimalAdapter ()
         parent,
         false
         )
-        return AnimalViewHolder(binding)
+        return AnimalViewHolder(binding, delAnimal)
     }
 
     override fun onBindViewHolder(
-        holer: AnimalViewHolder,
+        holder: AnimalViewHolder,
         position: Int
     ) {
         holder.bind(getItem(position))
     }
 
 class AnimalViewHolder(
-    private val binding: ItemAnimalBinding
+    private val binding: ItemAnimalBinding,
+    private val onClickDelete : (Animal) -> Unit,
 
 ): RecyclerView.ViewHolder(binding.root)
 {
     fun bind(animal: Animal) {
-        binding.nombreAnimal.text = animal.nombre
+        with(binding) {
+            nombreAnimal.text = animal.nombre
+
+            root.setOnClickListener {
+                onClickDelete(animal)
+            }
+        }
     }
 
 }
@@ -44,7 +53,10 @@ class AnimalViewHolder(
 }
 
 
-class AnimalDiffCallback : DiffUtil.ItemCallback<Animal>(){
+class AnimalDiffCallback : DiffUtil.ItemCallback<Animal>() {
+    override fun areItemsTheSame(oldItem: Animal, newItem: Animal): Boolean =
+        oldItem.nombre == newItem.nombre
 
-
+    override fun areContentsTheSame(oldItem: Animal, newItem: Animal): Boolean =
+        oldItem == newItem
 }
