@@ -18,8 +18,8 @@ class AnimalAdapter (
     ): AnimalViewHolder {
         val binding = ItemAnimalBinding.inflate(
             LayoutInflater.from(parent.context),
-        parent,
-        false
+            parent,
+            false
         )
         return AnimalViewHolder(binding, delAnimal)
     }

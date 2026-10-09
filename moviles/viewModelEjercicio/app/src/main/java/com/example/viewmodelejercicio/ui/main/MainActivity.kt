@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.viewmodelejercicio.R
 import com.example.viewmodelejercicio.databinding.ActivityMainBinding
 import com.example.viewmodelejercicio.di.AppModule
+import com.example.viewmodelejercicio.domain.model.Animal
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,9 +19,12 @@ class MainActivity : AppCompatActivity() {
         AppModule.dameNombreUseCase,
         AppModule.cargarAnimalesUseCase,
         AppModule.deleteAnimalUseCase,
+        AppModule.addAnimalUseCase,
     ) };
 
-    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) };
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    private lateinit var adapter : AnimalAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     private fun configRecycler() {
         binding.listado.layoutManager = LinearLayoutManager(this)
 
-        val adapter = AnimalAdapter({mainViewModel.handleDeleteAnimal(it)})
+        adapter = AnimalAdapter({mainViewModel.handleDeleteAnimal(it)})
         binding.listado.adapter = adapter
 
 
@@ -54,6 +58,11 @@ class MainActivity : AppCompatActivity() {
     private fun setupEventos() {
         binding.button.setOnClickListener {
             mainViewModel.handleDameNombre()
+        }
+
+        binding.buttonAdd.setOnClickListener {
+            val animal = Animal("kuina", "gata", "blanca")
+            mainViewModel.handleAddAnimal(animal)
         }
     }
 
@@ -64,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             state?.animales.let{
-
+                adapter.submitList(it)
             }
             state?.error?.let{
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()

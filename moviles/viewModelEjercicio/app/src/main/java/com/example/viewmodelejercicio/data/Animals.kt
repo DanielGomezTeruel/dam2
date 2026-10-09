@@ -17,4 +17,8 @@ object Animals {
     fun deleteAnimal(animal : Animal){
         animales.remove(animal)
     }
+
+    fun addAnimal(animal:Animal){
+        animales.add(animal)
+    }
 }
