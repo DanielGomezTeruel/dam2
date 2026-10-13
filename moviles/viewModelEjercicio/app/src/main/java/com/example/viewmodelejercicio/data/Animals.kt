@@ -4,15 +4,19 @@ import android.R
 import com.example.viewmodelejercicio.domain.model.Animal
 
 object Animals {
-    private val animales = mutableListOf(
-        Animal("Groucho","Gato","Blanco y negro"),
-        Animal("Jojo", "Gato", "Cálico")
+    private var animales = mutableListOf(
+        Animal(1, "Groucho","Gato","Blanco y negro"),
+        Animal(2, "Jojo", "Gato", "Cálico")
     )
 
 
     fun dameAnimal() = animales[1]
 
     fun dameLista() = animales.toList()
+
+    fun dameListaShuffle(){
+        animales = animales.shuffled().toMutableList()
+    }
 
     fun deleteAnimal(animal : Animal){
         animales.remove(animal)

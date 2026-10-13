@@ -40,7 +40,6 @@ class AnimalViewHolder(
     fun bind(animal: Animal) {
         with(binding) {
             nombreAnimal.text = animal.nombre
-
             root.setOnClickListener {
                 onClickDelete(animal)
             }
@@ -55,7 +54,7 @@ class AnimalViewHolder(
 
 class AnimalDiffCallback : DiffUtil.ItemCallback<Animal>() {
     override fun areItemsTheSame(oldItem: Animal, newItem: Animal): Boolean =
-        oldItem.nombre == newItem.nombre
+        oldItem.id == newItem.id
 
     override fun areContentsTheSame(oldItem: Animal, newItem: Animal): Boolean =
         oldItem == newItem

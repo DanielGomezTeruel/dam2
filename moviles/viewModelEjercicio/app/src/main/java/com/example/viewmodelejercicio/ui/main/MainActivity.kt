@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.size
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.viewmodelejercicio.R
 import com.example.viewmodelejercicio.databinding.ActivityMainBinding
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         AppModule.cargarAnimalesUseCase,
         AppModule.deleteAnimalUseCase,
         AppModule.addAnimalUseCase,
-    ) };
+        AppModule.cargarAnimalesShuffleUseCase
+    ) }
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
@@ -61,8 +63,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonAdd.setOnClickListener {
-            val animal = Animal("kuina", "gata", "blanca")
+            val animal = Animal(binding.listado.size+1,"kuina", "gata", "blanca")
             mainViewModel.handleAddAnimal(animal)
+        }
+
+        binding.buttonShuffle.setOnClickListener {
+            mainViewModel.handleCargarAnimalesShuffle()
         }
     }
 
