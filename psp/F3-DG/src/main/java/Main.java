@@ -18,6 +18,7 @@ public class Main {
         int mes;
         int año;
 
+
         while(!(colorAño.equals("verde")&&colorMes.equals("verde")&&colorDia.equals("verde"))){
             System.out.println("Adivina la fecha. Día:");
             dia = sc.nextInt();
