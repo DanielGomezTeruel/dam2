@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
@@ -48,8 +47,8 @@ public class Main extends JFrame{//inheriting JFrame
         f.add(generateDate);
 
 
-        JLabel error = new JLabel("a");
-        error.setBounds(130,20,200,40);
+        JLabel error = new JLabel("");
+        error.setBounds(70,20,300,50);
         error.setForeground(Color.gray);
         f.add(error);
 
@@ -69,11 +68,11 @@ public class Main extends JFrame{//inheriting JFrame
                     String colorMes = "";
                     String colorAño = "";
 
-                    int dia;
-                    int mes;
-                    int año;
+                    int dia = Integer.parseInt(day.getText());
+                    int mes = Integer.parseInt(month.getText());
+                    int año = Integer.parseInt(year.getText());
 
-                    dia = Integer.parseInt(day.getText());
+
                     if (respuesta.getDayOfMonth() > dia) {
                         colorDia = "azul";
                         day.setBackground(Color.blue);
@@ -86,7 +85,7 @@ public class Main extends JFrame{//inheriting JFrame
                     }
 
                     System.out.println("Mes:");
-                    mes = Integer.parseInt(month.getText());
+
                     if (respuesta.getMonthValue() > mes) {
                         colorMes = "azul";
                         month.setBackground(Color.blue);
@@ -99,7 +98,7 @@ public class Main extends JFrame{//inheriting JFrame
                     }
 
                     System.out.println("Año:");
-                    año = Integer.parseInt(year.getText());
+
                     if (respuesta.getYear() > año) {
                         colorAño = "azul";
                         year.setBackground(Color.blue);
