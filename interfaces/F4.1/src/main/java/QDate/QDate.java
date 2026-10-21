@@ -1,18 +1,20 @@
 package QDate;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Date;
 import java.util.InputMismatchException;
 
 public class QDate extends JPanel {
-    Date date;
-    Integer year;
-    Integer month;
-    Integer day;
+    private Date date;
+    private Integer year;
+    private Integer month;
+    private Integer day;
 
-    JTextField yearUI = new JTextField();
-    JComboBox<Integer> monthUI = new JComboBox<>();
-    JComboBox<Integer> dayUI = new JComboBox<>();
+
+    private final JTextField yearUI = new JTextField();
+    private final JComboBox<Integer> monthUI = new JComboBox<>();
+    private final JComboBox<Integer> dayUI = new JComboBox<>();
 
     public QDate(){
         year=1900;
@@ -22,13 +24,13 @@ public class QDate extends JPanel {
         update();
     }
 
-    public QDate(Integer year, Integer month, Integer day){
+    public QDate(int year, int month, int day){
         try {
             date = new Date(year, month, day);
             this.year = year;
             this.month = month;
             this.day = day;
-            check();
+            checkValidity();
             update();
         }catch (InputMismatchException e){
             throw new QDateException("Error: Fecha inexistente");
@@ -36,22 +38,47 @@ public class QDate extends JPanel {
     }
 
     public Date getDate() {
-        check();
+        checkValidity();
         return date;
     }
 
-    public void setDate(Integer year, Integer month, Integer day) {
+    public void setDate(int year, int month, int day) {
         try {
             date = new Date(year, month, day);
             this.year = year;
             this.month = month;
             this.day = day;
-            check();
+            checkValidity();
             update();
         }catch (InputMismatchException e){
             throw new QDateException("Error: Fecha inexistente");
         }
     }
+
+    public void setDayColor(Color color){
+        dayUI.setBackground(color);
+    }
+
+    public void setDayColor(String color){
+        dayUI.setBackground(Color.getColor(color));
+    }
+
+    public void setMonthColor(Color color){
+        monthUI.setBackground(color);
+    }
+
+    public void setMonthColor(String color){
+        monthUI.setBackground(Color.getColor(color));
+    }
+
+    public void setYearColor(Color color){
+        yearUI.setBackground(color);
+    }
+
+    public void setYearColor(String color){
+        yearUI.setBackground(Color.getColor(color));
+    }
+
 
     void update(){
         yearUI.setText(String.valueOf(year));
@@ -59,7 +86,7 @@ public class QDate extends JPanel {
         dayUI.addItem(day);
     }
 
-    void check(){
+    public boolean checkValidity(){
         boolean bisiesto = false;
         if(year==null||month==null||day==null){
             throw new QDateException("Error: Debes rellenar todos los campos");
@@ -87,5 +114,6 @@ public class QDate extends JPanel {
             default:
                 throw new QDateException("Error: Fecha inexistente");
         }
+        return true;
     }
 }
