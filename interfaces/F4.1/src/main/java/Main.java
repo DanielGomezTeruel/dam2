@@ -17,7 +17,7 @@ public class Main {
 
         check.addActionListener(event->{
             try {
-                date.checkValidity();
+                date.getDate();
             }catch (QDateException e){
                 JOptionPane.showMessageDialog(
                         frame,
