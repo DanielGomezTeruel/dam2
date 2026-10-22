@@ -1,27 +1,37 @@
 package QDate;
 
 import javax.swing.*;
+
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
+import java.util.List;
 
 public class QDate extends JPanel {
     private Date date;
     private Integer year;
     private Integer month;
     private Integer day;
+    List<Integer> days = new ArrayList<>();
+    List<Integer> months = new ArrayList<>();
 
 
     private final JTextField yearUI = new JTextField();
-    private final JComboBox<Integer> monthUI = new JComboBox<>();
-    private final JComboBox<Integer> dayUI = new JComboBox<>();
+    private JComboBox<Object> monthUI;
+    private JComboBox<Object> dayUI;
+
+    private JLabel yearLabel = new JLabel("Year:");
+    private JLabel monthLabel = new JLabel("Month:");
+    private JLabel dayLabel = new JLabel("Day:");
 
     public QDate(){
         year=1900;
         month=0;
-        day=0;
-        date = new Date(1900, 0,0);
-        update();
+        day=1;
+        date = new Date(1900, 0,1);
+        create();
+        updateDateUI();
     }
 
     public QDate(int year, int month, int day){
@@ -31,7 +41,8 @@ public class QDate extends JPanel {
             this.month = month;
             this.day = day;
             checkValidity();
-            update();
+            create();
+            updateDateUI();
         }catch (InputMismatchException e){
             throw new QDateException("Error: Fecha inexistente");
         }
@@ -49,7 +60,7 @@ public class QDate extends JPanel {
             this.month = month;
             this.day = day;
             checkValidity();
-            update();
+            updateDateUI();
         }catch (InputMismatchException e){
             throw new QDateException("Error: Fecha inexistente");
         }
@@ -80,16 +91,17 @@ public class QDate extends JPanel {
     }
 
 
-    void update(){
+    void updateDateUI(){
         yearUI.setText(String.valueOf(year));
         monthUI.addItem(month);
         dayUI.addItem(day);
     }
 
     public boolean checkValidity(){
+        update();
         boolean bisiesto = false;
         if(year==null||month==null||day==null){
-            throw new QDateException("Error: Debes rellenar todos los campos");
+            throw new QDateException("Error: Debes rellenar con números todos los campos");
         }
         if((year%100!=0&&year%4==0)||year%400==0){
             bisiesto=true;
@@ -97,17 +109,17 @@ public class QDate extends JPanel {
 
         switch (month){
             case 0, 2, 4, 6, 7, 9, 11:
-                if(day>30||day<0){
+                if(day>31||day<1){
                     throw new QDateException("Error: Fecha inexistente");
                 }
                 break;
             case 3, 5, 8, 10:
-                if(day>29||day<0){
+                if(day>30||day<1){
                     throw new QDateException("Error: Fecha inexistente");
                 }
                 break;
             case 1:
-                if(bisiesto?day>28:day>27||day<0){
+                if(bisiesto?day>29:day>28||day<0){
                     throw new QDateException("Error: Fecha inexistente");
                 }
                 break;
@@ -115,5 +127,47 @@ public class QDate extends JPanel {
                 throw new QDateException("Error: Fecha inexistente");
         }
         return true;
+    }
+
+    void create(){
+        for (int i = 1; i < 32; i++) {
+            days.add(i);
+            if(i<13) {
+                months.add(i);
+            }
+        }
+        monthUI = new JComboBox<>(months.toArray());
+        dayUI = new JComboBox<>(days.toArray());
+
+        yearUI.setBounds(10,30,40,25);
+        monthUI.setBounds(60,30,40,25);
+        dayUI.setBounds(110,30,40,25);
+
+        yearLabel.setBounds(10,10,40,15);
+        monthLabel.setBounds(60,10,40,15);
+        dayLabel.setBounds(110,10,40,15);
+
+        add(yearUI);
+        add(monthUI);
+        add(dayUI);
+
+        add(yearLabel);
+        add(monthLabel);
+        add(dayLabel);
+
+        setSize(155,60);
+        setLayout(null);
+        setVisible(true);
+    }
+
+    void update() {
+        try {
+            year = Integer.parseInt(yearUI.getText()) - 1;
+            month = (int) monthUI.getSelectedItem() - 1;
+            day = (int) dayUI.getSelectedItem();
+            date = new Date(year, month, day);
+        }catch (NumberFormatException e){
+            throw new QDateException("Error: Debes rellenar con números todos los campos");
+        }
     }
 }

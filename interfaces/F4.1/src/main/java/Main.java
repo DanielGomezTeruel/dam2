@@ -9,7 +9,8 @@ public class Main {
 
         QDate date = new QDate();
         frame.add(date);
-        JButton check = new JButton();
+        JButton check = new JButton("Check");
+        check.setBounds(40, 70, 80, 30);
         JOptionPane popup= new JOptionPane();
         frame.add(check);
 
@@ -27,7 +28,7 @@ public class Main {
             }
         });
 
-        frame.setSize(400,500);
+        frame.setSize(180,150);
         frame.setLayout(null);
         frame.setVisible(true);
     }
