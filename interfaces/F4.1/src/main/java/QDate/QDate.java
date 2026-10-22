@@ -91,13 +91,7 @@ public class QDate extends JPanel {
     }
 
 
-    void updateDateUI(){
-        yearUI.setText(String.valueOf(year));
-        monthUI.addItem(month);
-        dayUI.addItem(day);
-    }
-
-    public boolean checkValidity(){
+    boolean checkValidity(){
         update();
         boolean bisiesto = false;
         if(year==null||month==null||day==null){
@@ -127,6 +121,12 @@ public class QDate extends JPanel {
                 throw new QDateException("Error: Fecha inexistente");
         }
         return true;
+    }
+
+    void updateDateUI(){
+        yearUI.setText(String.valueOf(year));
+        monthUI.addItem(month);
+        dayUI.addItem(day);
     }
 
     void create(){
