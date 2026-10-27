@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 
-public class QDate extends JPanel {
+public class QDateDani extends JPanel {
     private Date date;
     private Integer year;
     private Integer month;
@@ -25,7 +25,7 @@ public class QDate extends JPanel {
     private JLabel monthLabel = new JLabel("Month:");
     private JLabel dayLabel = new JLabel("Day:");
 
-    public QDate(){
+    public QDateDani(){
         year=1900;
         month=0;
         day=1;
@@ -34,7 +34,7 @@ public class QDate extends JPanel {
         updateDateUI();
     }
 
-    public QDate(int year, int month, int day){
+    public QDateDani(int year, int month, int day){
         try {
             date = new Date(year, month, day);
             this.year = year;
@@ -44,7 +44,7 @@ public class QDate extends JPanel {
             create();
             updateDateUI();
         }catch (InputMismatchException e){
-            throw new QDateException("Error: Fecha inexistente");
+            throw new QDateExceptionDani("Error: Fecha inexistente");
         }
     }
 
@@ -62,7 +62,7 @@ public class QDate extends JPanel {
             checkValidity();
             updateDateUI();
         }catch (InputMismatchException e){
-            throw new QDateException("Error: Fecha inexistente");
+            throw new QDateExceptionDani("Error: Fecha inexistente");
         }
     }
 
@@ -95,7 +95,7 @@ public class QDate extends JPanel {
         update();
         boolean bisiesto = false;
         if(year==null||month==null||day==null){
-            throw new QDateException("Error: Debes rellenar con números todos los campos");
+            throw new QDateExceptionDani("Error: Debes rellenar con números todos los campos");
         }
         if((year%100!=0&&year%4==0)||year%400==0){
             bisiesto=true;
@@ -104,21 +104,21 @@ public class QDate extends JPanel {
         switch (month){
             case 0, 2, 4, 6, 7, 9, 11:
                 if(day>31||day<1){
-                    throw new QDateException("Error: Fecha inexistente");
+                    throw new QDateExceptionDani("Error: Fecha inexistente");
                 }
                 break;
             case 3, 5, 8, 10:
                 if(day>30||day<1){
-                    throw new QDateException("Error: Fecha inexistente");
+                    throw new QDateExceptionDani("Error: Fecha inexistente");
                 }
                 break;
             case 1:
                 if(bisiesto?day>29:day>28||day<0){
-                    throw new QDateException("Error: Fecha inexistente");
+                    throw new QDateExceptionDani("Error: Fecha inexistente");
                 }
                 break;
             default:
-                throw new QDateException("Error: Fecha inexistente");
+                throw new QDateExceptionDani("Error: Fecha inexistente");
         }
         return true;
     }
@@ -162,12 +162,12 @@ public class QDate extends JPanel {
 
     void update() {
         try {
-            year = Integer.parseInt(yearUI.getText()) - 1;
+            year = Integer.parseInt(yearUI.getText()) -1900;
             month = (int) monthUI.getSelectedItem() - 1;
             day = (int) dayUI.getSelectedItem();
             date = new Date(year, month, day);
         }catch (NumberFormatException e){
-            throw new QDateException("Error: Debes rellenar con números todos los campos");
+            throw new QDateExceptionDani("Error: Debes rellenar con números todos los campos");
         }
     }
 }

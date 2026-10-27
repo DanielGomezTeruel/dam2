@@ -1,12 +1,13 @@
+import QDate.QDateDani;
+import QDate.QDateExceptionDani;
+
 import javax.swing.*;
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-
-import QDate.*;
-
-public class Main{
+public class MainConQDateLuna {
     Random random = new Random();
 
     JFrame frame;
@@ -24,6 +25,7 @@ public class Main{
     Date dateFinal;
 
     Date incognita;
+    Date guess;
 
     void main(String[] args) {
 
@@ -41,15 +43,15 @@ public class Main{
         frame.add(choose);
 
         dateInicialUI = new QDate();
-        dateInicialUI.setBounds(50, 60, 155, 70);
+        dateInicialUI.setBounds(30, 65, 300, 60);
         dateFinalUI = new QDate();
-        dateFinalUI.setBounds(50, 120, 155, 70);
+        dateFinalUI.setBounds(30, 120, 300, 60);
 
         frame.add(dateInicialUI);
         frame.add(dateFinalUI);
 
         check = new JButton("Generate");
-        check.setBounds(80, 200, 100, 30);
+        check.setBounds(120, 180, 100, 30);
 
         frame.add(check);
 
@@ -101,20 +103,65 @@ public class Main{
         frame.add(guesserLabel);
 
         dateGuesser = new QDate();
-        dateGuesser.setBounds(50, 260, 155, 70);
+        dateGuesser.setBounds(30, 260, 300, 60);
 
         frame.add(dateGuesser);
 
         guessValidator = new JButton("Check my guess");
-        guessValidator.setBounds(60, 350, 140, 30);
+        guessValidator.setBounds(100, 320, 140, 30);
 
         frame.add(guessValidator);
 
+        guessValidator.addActionListener(event->{
+            try{
+                guess = dateGuesser.getDate();
+                if(guess.before(incognita))
+                {
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Tu fecha es anterior a la incógnita",
+                            "Anterior",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+                else if (guess.after(incognita))
+                {
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Tu fecha es posterior a la incógnita",
+                            "Posterior",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Acertaste!! La fecha era "+formatDate(incognita),
+                            "Acierto",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+            }catch(QDateException e){
+                JOptionPane.showMessageDialog(
+                        frame,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+        });
 
 
-        frame.setSize(300,500);
+        frame.setSize(360,450);
         frame.setLayout(null);
         frame.setVisible(true);
+    }
+
+    private String formatDate(Date incognita) {
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        incognita.setYear(incognita.getYear());
+        return formato.format(incognita);
     }
 
     private void generarIncognita() {
@@ -122,6 +169,11 @@ public class Main{
         int month;
         int day;
         boolean bisiesto = false;
+
+        System.out.println(dateInicial.getYear());
+        System.out.println(dateInicial.getMonth());
+
+        System.out.println(dateFinal.getYear());
 
         year = random.nextInt(dateInicial.getYear(), dateFinal.getYear()+1);
         if((year%100!=0&&year%4==0)||year%400==0){
@@ -147,6 +199,7 @@ public class Main{
         }
 
         incognita = new Date(year, month, day);
+        System.out.println(incognita.getYear()+" "+incognita.getMonth()+" "+incognita.getDate());
     }
 
     private int getDayBound(int month, boolean bisiesto) {
