@@ -1,6 +1,4 @@
-import QDate.QDate;
-import QDate.QDateException;
-
+import QDate.*;
 import javax.swing.*;
 import java.util.Date;
 
