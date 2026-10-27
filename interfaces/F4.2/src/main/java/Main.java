@@ -1,212 +1,169 @@
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
-import java.util.Scanner;
+
 
 import QDate.*;
 
-public class Main extends JFrame {//inheriting JFrame
-    JFrame f = new JFrame();
+public class Main{
     Random random = new Random();
-    Date respuesta = null;
-    public static int contador = 0;
+
+    JFrame frame;
+    JLabel title;
+    JLabel choose;
+    QDate dateInicialUI;
+    QDate dateFinalUI;
+    JButton check;
+    JOptionPane popup;
+    QDate dateGuesser;
+    JLabel guesserLabel;
+    JButton guessValidator;
+
+    Date dateInicial;
+    Date dateFinal;
+
+    Date incognita;
+
+    void main(String[] args) {
+
+        frame = new JFrame();
+
+        title = new JLabel("Date guesser");
+        title.setBounds(20, 5, 300, 40);
+        title.setFont(new Font("Arial", Font.BOLD, 15));
+
+        frame.add(title);
+
+        choose = new JLabel("Choose the game's bounds:");
+        choose.setBounds(55, 30, 300, 40);
+
+        frame.add(choose);
+
+        dateInicialUI = new QDate();
+        dateInicialUI.setBounds(50, 60, 155, 70);
+        dateFinalUI = new QDate();
+        dateFinalUI.setBounds(50, 120, 155, 70);
+
+        frame.add(dateInicialUI);
+        frame.add(dateFinalUI);
+
+        check = new JButton("Generate");
+        check.setBounds(80, 200, 100, 30);
+
+        frame.add(check);
+
+        popup= new JOptionPane();
 
 
-
-    void Simple(){
-
-        QDate dateInicialUI = new QDate();
-        dateInicialUI.setBounds(10, 10, 155, 70);
-        QDate dateFinalUI = new QDate();
-        dateFinalUI.setBounds(10, 70, 155, 70);
-
-        f.add(dateInicialUI);
-        f.add(dateFinalUI);
-
-        JLabel contadorLabel = new JLabel("Intentos: "+contador);
-        contadorLabel.setBounds(250,100,100,100);
-        f.add(contadorLabel);
-
-        JLabel title = new JLabel("Guess the date");
-        title.setBounds(130,50,100,40);
-        f.add(title);
-
-
-        JButton generateDate = new JButton("Generate date");
-        generateDate.setBounds(250,80,100, 40);
-        generateDate.addActionListener(e -> {
-            generateDate();
-            System.out.println(respuesta);
-            contador = 0;
-            contadorLabel.setText("Intentos: "+contador);
-            title.setText("Guess the date");
-        });
-
-        f.add(generateDate);
-
-
-        JLabel error = new JLabel("");
-        error.setBounds(70,20,300,50);
-        error.setForeground(Color.gray);
-        f.add(error);
-
-
-
-        JButton check=new JButton("Check");
-        check.setBounds(130,250,100, 40);
-        check.addActionListener(e -> {
-
+        check.addActionListener(event->{
             try {
-                if(day.getText()!=null&&month.getText()!=null&&year.getText()!=null) {
-                    error.setText("");
+                dateInicial = dateInicialUI.getDate();
+                dateFinal = dateFinalUI.getDate();
 
-
-
-                    String colorDia = "";
-                    String colorMes = "";
-                    String colorAño = "";
-
-                    int dia = Integer.parseInt(day.getText());
-                    int mes = Integer.parseInt(month.getText());
-                    int año = Integer.parseInt(year.getText());
-
-
-                    if (respuesta.getDayOfMonth() > dia) {
-                        colorDia = "azul";
-                        day.setBackground(Color.blue);
-                    } else if (respuesta.getDayOfMonth() < dia) {
-                        colorDia = "rojo";
-                        day.setBackground(Color.red);
-                    } else {
-                        colorDia = "verde";
-                        day.setBackground(Color.green);
-                    }
-
-                    System.out.println("Mes:");
-
-                    if (respuesta.getMonthValue() > mes) {
-                        colorMes = "azul";
-                        month.setBackground(Color.blue);
-                    } else if (respuesta.getMonthValue() < mes) {
-                        colorMes = "rojo";
-                        month.setBackground(Color.red);
-                    } else {
-                        colorMes = "verde";
-                        month.setBackground(Color.green);
-                    }
-
-                    System.out.println("Año:");
-
-                    if (respuesta.getYear() > año) {
-                        colorAño = "azul";
-                        year.setBackground(Color.blue);
-                    } else if (respuesta.getYear() < año) {
-                        colorAño = "rojo";
-                        year.setBackground(Color.red);
-                    } else {
-                        colorAño = "verde";
-                        year.setBackground(Color.green);
-                    }
-
-                    if (colorAño.equals("verde") && colorMes.equals("verde") && colorDia.equals("verde")) {
-                        title.setText("Acertaste!!");
-                    } else {
-                        contador++;
-                        contadorLabel.setText("Intentos: " + contador);
-                    }
+                if(dateInicial.before(dateFinal)){
+                    generarIncognita();
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Fecha generada con éxito",
+                            "Valid",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                }else if(dateInicial.after(dateFinal)) {
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Orden incorrecto",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                }else{
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Introduce fechas diferentes",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE
+                    );
                 }
 
-            }catch(NumberFormatException ex){
-                error.setText("Debes introducir números en todos los campos");
+            }catch (QDateException e){
+                JOptionPane.showMessageDialog(
+                        frame,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
             }
         });
-        f.add(check);
 
+        guesserLabel = new JLabel("Guess the date:");
+        guesserLabel.setBounds(65, 230, 300, 40);
 
-        JLabel dayLabel = new JLabel("Day: ");
-        dayLabel.setBounds(80,100,100,40);
-        f.add(dayLabel);
+        frame.add(guesserLabel);
 
-        JLabel monthLabel = new JLabel("Month: ");
-        monthLabel.setBounds(80,150,100,40);
-        f.add(monthLabel);
+        dateGuesser = new QDate();
+        dateGuesser.setBounds(50, 260, 155, 70);
 
-        JLabel yearLabel = new JLabel("Year: ");
-        yearLabel.setBounds(80,200,100,40);
-        f.add(yearLabel);
+        frame.add(dateGuesser);
 
+        guessValidator = new JButton("Check my guess");
+        guessValidator.setBounds(60, 350, 140, 30);
 
-        f.setSize(400,500);
-        f.setLayout(null);
-        f.setVisible(true);
+        frame.add(guessValidator);
 
 
 
+        frame.setSize(300,500);
+        frame.setLayout(null);
+        frame.setVisible(true);
     }
 
-    public void main(String[] args) {
-        new Main().Simple();
+    private void generarIncognita() {
+        int year;
+        int month;
+        int day;
+        boolean bisiesto = false;
 
-        generateDate();
-
-        System.out.println(respuesta);
-
-
-
-        validate();
-
-    }
-    void generateDate(){
-        respuesta = Date(random.nextInt(dateInicialUI.getDate().getYear(),dateFinalUI.getDate().getYear()+1), random.nextInt(1,13), random.nextInt(1,25));
-    }
-
-    void validate(){
-        String colorDia = "";
-        String colorMes = "";
-        String colorAño = "";
-
-        int dia;
-        int mes;
-        int año;
-
-        while(!(colorAño.equals("verde")&&colorMes.equals("verde")&&colorDia.equals("verde"))){
-            System.out.println("Adivina la fecha. Día:");
-            dia = sc.nextInt();
-            if (respuesta.getDayOfMonth() > dia) {
-                colorDia = "azul";
-            } else if (respuesta.getDayOfMonth() < dia) {
-                colorDia = "rojo";
-            } else {
-                colorDia = "verde";
-            }
-
-            System.out.println("Mes:");
-            mes = sc.nextInt();
-            if (respuesta.getMonthValue() > mes) {
-                colorMes = "azul";
-            } else if (respuesta.getMonthValue() < mes) {
-                colorMes = "rojo";
-            } else {
-                colorMes = "verde";
-            }
-
-            System.out.println("Año:");
-            año = sc.nextInt();
-            if (respuesta.getYear() > año) {
-                colorAño = "azul";
-            } else if (respuesta.getYear() < año) {
-                colorAño = "rojo";
-            } else {
-                colorAño = "verde";
-            }
-
-            System.out.println(año + "-" + mes + "-" + dia);
-
-            System.out.println(colorAño + colorMes + colorDia);
+        year = random.nextInt(dateInicial.getYear(), dateFinal.getYear()+1);
+        if((year%100!=0&&year%4==0)||year%400==0){
+            bisiesto=true;
         }
-        System.out.println("Adivinaste!!");
+        if(year==dateInicial.getYear()){
+            month = random.nextInt(dateInicial.getMonth(), 12);
+            if(month==dateInicial.getMonth()){
+                day = random.nextInt(dateInicial.getDay(), getDayBound(month, bisiesto));
+            }else{
+                day =  random.nextInt(1, getDayBound(month, bisiesto));
+            }
+        } else if (year==dateFinal.getYear()) {
+            month = random.nextInt(0, dateFinal.getMonth()+1);
+            if(month==dateFinal.getMonth()){
+                day = random.nextInt(1, dateFinal.getDay());
+            }else{
+                day =  random.nextInt(1, getDayBound(month, bisiesto));
+            }
+        }else{
+            month = random.nextInt(0, 12);
+            day =  random.nextInt(1, getDayBound(month, bisiesto));
+        }
+
+        incognita = new Date(year, month, day);
+    }
+
+    private int getDayBound(int month, boolean bisiesto) {
+        switch (month) {
+            case 0, 2, 4, 6, 7, 9, 11:
+                return 32;
+
+            case 3, 5, 8, 10:
+                return 31;
+
+            case 1:
+                return bisiesto?30:29;
+
+            default:
+                return 28;
+
+        }
     }
 }
 
