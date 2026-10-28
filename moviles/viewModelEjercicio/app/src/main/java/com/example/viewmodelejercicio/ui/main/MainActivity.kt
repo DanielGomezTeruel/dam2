@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonAdd.setOnClickListener {
-            val animal = Animal(binding.listado.size+1,"kuina", "gata", "blanca")
+            val animal = Animal(binding.listado.size+1,
+                binding.textInput.editText?.text.toString(), "gata", "blanca")
             mainViewModel.handleAddAnimal(animal)
         }
 
