@@ -117,6 +117,8 @@ public class MainConQDateLuna {
                 guess = dateGuesser.getDate();
                 if(guess.before(incognita))
                 {
+
+                    dateGuesser.setBackground(Color.CYAN);
                     JOptionPane.showMessageDialog(
                             frame,
                             "Tu fecha es anterior a la incógnita",
@@ -126,6 +128,7 @@ public class MainConQDateLuna {
                 }
                 else if (guess.after(incognita))
                 {
+                    dateGuesser.setBackground(Color.RED);
                     JOptionPane.showMessageDialog(
                             frame,
                             "Tu fecha es posterior a la incógnita",
@@ -135,6 +138,7 @@ public class MainConQDateLuna {
                 }
                 else
                 {
+                    dateGuesser.setBackground(Color.GREEN);
                     JOptionPane.showMessageDialog(
                             frame,
                             "Acertaste!! La fecha era "+formatDate(incognita),
@@ -165,6 +169,7 @@ public class MainConQDateLuna {
     }
 
     private void generarIncognita() {
+        dateGuesser.setBackground(null);
         int year;
         int month;
         int day;
