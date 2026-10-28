@@ -175,15 +175,13 @@ public class MainConQDateLuna {
         int day;
         boolean bisiesto = false;
 
-        System.out.println(dateInicial.getYear());
-        System.out.println(dateInicial.getMonth());
-
-        System.out.println(dateFinal.getYear());
 
         year = random.nextInt(dateInicial.getYear(), dateFinal.getYear()+1);
+
         if((year%100!=0&&year%4==0)||year%400==0){
             bisiesto=true;
         }
+
         if(year==dateInicial.getYear()){
             month = random.nextInt(dateInicial.getMonth(), 12);
             if(month==dateInicial.getMonth()){
@@ -204,7 +202,7 @@ public class MainConQDateLuna {
         }
 
         incognita = new Date(year, month, day);
-        System.out.println(incognita.getYear()+" "+incognita.getMonth()+" "+incognita.getDate());
+
     }
 
     private int getDayBound(int month, boolean bisiesto) {
