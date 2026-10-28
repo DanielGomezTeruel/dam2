@@ -20,6 +20,8 @@ public class MainConQDateLuna {
     QDate dateGuesser;
     JLabel guesserLabel;
     JButton guessValidator;
+    JLabel contadorLabel;
+    int contador = 0;
 
     Date dateInicial;
     Date dateFinal;
@@ -102,6 +104,13 @@ public class MainConQDateLuna {
 
         frame.add(guesserLabel);
 
+        contadorLabel = new JLabel("Intentos: "+contador);
+        contadorLabel.setForeground(Color.RED);
+        contadorLabel.setFont(contadorLabel.getFont().deriveFont(13f));
+        contadorLabel.setBounds(170, 230, 300, 40);
+        frame.add(contadorLabel);
+
+
         dateGuesser = new QDate();
         dateGuesser.setBounds(30, 260, 300, 60);
 
@@ -146,6 +155,8 @@ public class MainConQDateLuna {
                             JOptionPane.INFORMATION_MESSAGE
                     );
                 }
+                contador++;
+                contadorLabel.setText("Intentos: "+contador);
             }catch(QDateException e){
                 JOptionPane.showMessageDialog(
                         frame,
@@ -169,6 +180,8 @@ public class MainConQDateLuna {
     }
 
     private void generarIncognita() {
+        contador=0;
+        contadorLabel.setText("Intentos: "+contador);
         dateGuesser.setBackground(null);
         int year;
         int month;

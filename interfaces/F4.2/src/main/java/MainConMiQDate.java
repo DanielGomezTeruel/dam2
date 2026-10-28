@@ -20,6 +20,8 @@ public class MainConMiQDate {
     QDateDani dateGuesser;
     JLabel guesserLabel;
     JButton guessValidator;
+    JLabel contadorLabel;
+    int contador = 0;
 
     Date dateInicial;
     Date dateFinal;
@@ -33,12 +35,13 @@ public class MainConMiQDate {
 
         title = new JLabel("Date guesser");
         title.setBounds(20, 5, 300, 40);
-        title.setFont(new Font("Arial", Font.BOLD, 15));
+        title.setFont(title.getFont().deriveFont(18f));;
 
         frame.add(title);
 
         choose = new JLabel("Choose the game's bounds:");
-        choose.setBounds(55, 30, 300, 40);
+        choose.setBounds(40, 30, 300, 40);
+        choose.setFont(choose.getFont().deriveFont(13f));
 
         frame.add(choose);
 
@@ -97,10 +100,17 @@ public class MainConMiQDate {
             }
         });
 
-        guesserLabel = new JLabel("Guess the date:");
-        guesserLabel.setBounds(65, 230, 300, 40);
+        guesserLabel = new JLabel("Guess the date");
+        guesserLabel.setFont(guesserLabel.getFont().deriveFont(13f));
+        guesserLabel.setBounds(40, 230, 300, 40);
 
         frame.add(guesserLabel);
+
+        contadorLabel = new JLabel("Intentos: "+contador);
+        contadorLabel.setForeground(Color.RED);
+        contadorLabel.setFont(contadorLabel.getFont().deriveFont(13f));
+        contadorLabel.setBounds(170, 230, 300, 40);
+        frame.add(contadorLabel);
 
         dateGuesser = new QDateDani();
         dateGuesser.setBounds(50, 260, 155, 70);
@@ -145,6 +155,8 @@ public class MainConMiQDate {
                             JOptionPane.INFORMATION_MESSAGE
                     );
                 }
+                contador++;
+                contadorLabel.setText("Intentos: "+contador);
             }catch(QDateExceptionDani e){
                 JOptionPane.showMessageDialog(
                         frame,
@@ -154,6 +166,7 @@ public class MainConMiQDate {
                 );
             }
         });
+
 
 
         frame.setSize(300,500);
@@ -167,6 +180,8 @@ public class MainConMiQDate {
     }
 
     private void generarIncognita() {
+        contador=0;
+        contadorLabel.setText("Intentos: "+contador);
         dateGuesser.setBackground(null);
         int year;
         int month;
