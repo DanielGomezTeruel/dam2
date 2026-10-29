@@ -13,7 +13,7 @@ import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 
 import java.io.IOException;
 
-@WebServlet("/tresEnRaya")
+@WebServlet("/tres")
 public class MiPrimerServlet extends HttpServlet {
 
 
@@ -116,8 +116,5 @@ public class MiPrimerServlet extends HttpServlet {
         ((TemplateEngine) getServletContext().getAttribute(ThymeleafConstants.TEMPLATE_ENGINE_ATTR))
                 .process(UrlConstants.TEMPLATE_TRES_EN_RAYA, ctx, resp.getWriter());
 
-
     }
-
-
 }

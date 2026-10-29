@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tresEnRaya:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya casi completado">
+      <change afterPath="$PROJECT_DIR$/../../interfaces/F4.1/out/artifacts/F4_1_jar/F4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../interfaces/F4.1/out/artifacts/QDate_jar/QDate.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/pantallasDaniGomez.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/data/Animals.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/di/AppModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/model/Animal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/AddAnimalUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/CargarAnimalesShuffleUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/CargarAnimalesUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/DameNombreUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/DeleteAnimalUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/AnimalAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/artifacts/F3_DG_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/out/artifacts/F3_DG_jar/F3-DG.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/out/production/F3-DG/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/out/production/F3-DG/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../F3-DG/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/GameConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/MessageConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/ThymeleafConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/ThymeleafInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/UrlConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/MiPrimerServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/GameConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/MessageConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/ThymeleafConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/ThymeleafInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/UrlConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/org/example/MiPrimerServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/attoparser-2.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/javassist-3.29.0-GA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/ognl-3.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-2.0.17.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/thymeleaf-3.1.5.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/unbescape-1.1.6.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiPrimerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiPrimerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="moviles" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000025442823" />
+      <entry key="M2" value="1.0001568824440996" />
+      <entry key="M5" value="1.1631088798529192" />
+      <entry key="M10" value="3.1933116190326123" />
+      <entry key="M15" value="6.625481440749225" />
+      <entry key="M30" value="16.535900924096843" />
+      <entry key="H1" value="28.120440469953866" />
+      <entry key="H2" value="37.52426669988751" />
+      <entry key="H4" value="43.63902993956583" />
+      <entry key="D1" value="49.6744865078333" />
+      <entry key="W1" value="50.808045543318954" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="5.021011306400247E-133" />
+      <entry key="S10" value="9.782139371979177E-67" />
+      <entry key="S30" value="1.5671042518933434E-22" />
+      <entry key="S60" value="1.7963987858909254E-11" />
+      <entry key="M2" value="7.308984795988199E-6" />
+      <entry key="M5" value="0.02857550539852927" />
+      <entry key="M10" value="0.5568717567438213" />
+      <entry key="M15" value="1.557327330586283" />
+      <entry key="M30" value="4.508882649895991" />
+      <entry key="H1" value="7.845638178598072" />
+      <entry key="H2" value="10.440098231460274" />
+      <entry key="H4" value="12.076804819715273" />
+      <entry key="D1" value="13.657250701029007" />
+      <entry key="W1" value="13.950458178743213" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="6.953370095688829E-4" />
+      <entry key="MS500" value="0.23358183672079508" />
+      <entry key="S2" value="0.6952000061367136" />
+      <entry key="S5" value="0.8646570899245135" />
+      <entry key="S10" value="0.9298693940142957" />
+      <entry key="S30" value="0.9760543121588514" />
+      <entry key="S60" value="0.9879546129328748" />
+      <entry key="M2" value="0.9941230584336201" />
+      <entry key="M5" value="1.1890212863514575" />
+      <entry key="M10" value="3.746478981435634" />
+      <entry key="M15" value="8.177156494323192" />
+      <entry key="M30" value="21.036837284861853" />
+      <entry key="H1" value="35.95891675795349" />
+      <entry key="H2" value="47.9594546828702" />
+      <entry key="H4" value="55.71294256935491" />
+      <entry key="D1" value="63.33118284341229" />
+      <entry key="W1" value="64.75842258065377" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LJymnAHiqcgk4doMdaCs1rmPwu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.tomcatch.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;psp&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/madrid/Documents/dam2/psp/tresEnRaya&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <map>
+              <entry key="tomcatch" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="tomcatch" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/tres" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="tresEnRaya:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="1cfc9e8b-020e-42f7-9d09-4adfbb18031f" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60076" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="tresEnRaya:war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="" />
+      <created>1793186629661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793186629661</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tres en raya casi completado" />
+    <option name="LAST_COMMIT_MESSAGE" value="tres en raya casi completado" />
+  </component>
+</project>

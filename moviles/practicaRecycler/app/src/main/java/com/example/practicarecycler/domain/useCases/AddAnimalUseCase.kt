@@ -1,0 +1,12 @@
+package com.example.practicarecycler.domain.useCases
+
+import com.example.practicarecycler.data.Animals
+import com.example.practicarecycler.domain.model.Animal
+
+class AddAnimalUseCase {
+
+    fun addAnimal(animal: Animal){
+        Animals.addAnimal(animal)
+    }
+
+}
