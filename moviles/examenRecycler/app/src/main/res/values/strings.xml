@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">examenRecycler</string>
+    <string name="titulo">Gestión de alumnos</string>
+    <string name="añadir">Añadir nuevo alumno:</string>
+    <string name="borrarBtn">Borrar alumno seleccionado</string>
+    <string name="addBtn">Añadir alumno</string>
+    <string name="alumno_activo">Alumno activo</string>
+    <string name="edadField">Edad</string>
+    <string name="apellidosField">Apellidos</string>
+    <string name="emailField">Email</string>
+    <string name="cursoField">Curso</string>
+    <string name="nombreField">Nombre</string>
+    <string name="labelLista">Lista de alumnos (0)</string>
+</resources>
