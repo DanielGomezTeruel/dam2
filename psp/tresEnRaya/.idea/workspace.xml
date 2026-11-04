@@ -10,72 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya casi completado">
-      <change afterPath="$PROJECT_DIR$/../../interfaces/F4.1/out/artifacts/F4_1_jar/F4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../interfaces/F4.1/out/artifacts/QDate_jar/QDate.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/pantallasDaniGomez.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/data/Animals.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/di/AppModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/model/Animal.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/AddAnimalUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/CargarAnimalesShuffleUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/CargarAnimalesUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/DameNombreUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/domain/useCases/DeleteAnimalUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/AnimalAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/java/com/example/practicarecycler/main/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../moviles/practicaRecycler/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/artifacts/F3_DG_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/out/artifacts/F3_DG_jar/F3-DG.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/out/production/F3-DG/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/out/production/F3-DG/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../F3-DG/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RestauranteMejorado/RestauranteMejorado/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/Constants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/GameConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/MessageConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/ThymeleafConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/ThymeleafInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/UrlConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/example/MiPrimerServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/Constants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/GameConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/MessageConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/ThymeleafConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/ThymeleafInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/config/UrlConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/classes/org/example/MiPrimerServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/attoparser-2.0.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/javassist-3.29.0-GA.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/ognl-3.3.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-2.0.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/thymeleaf-3.1.5.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/lib/unbescape-1.1.6.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiPrimerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiPrimerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/GameConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/MessageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/UrlConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/abrirCaja.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/cajaFuerte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/guardarSecretos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/abrirCaja.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/cajaFuerte.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,27 +113,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.tomcatch.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;psp&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/madrid/Documents/dam2/psp/tresEnRaya&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Tomcat Server.tomcatch.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "psp",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/2dam/Desktop/dam2/psp/tresEnRaya/src/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\2dam\Desktop\dam2\psp\tresEnRaya\src\main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="config" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>
