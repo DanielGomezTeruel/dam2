@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemAlumno">
+
+    <TextView
+        android:id="@+id/nombreAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cursoAlumno"
+        app:layout_constraintEnd_toStartOf="@id/guidelaneVerItemMitad"
+
+        />
+
+    <TextView
+        android:id="@+id/cursoAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guidelaneHorItemMitad"
+        app:layout_constraintEnd_toStartOf="@id/guidelaneVerEntreCursoYEdad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelaneHorItemMitad"
+
+        />
+
+    <TextView
+        android:id="@+id/edadAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guidelaneHorItemMitad"
+        app:layout_constraintStart_toEndOf="@id/guidelaneVerEntreCursoYEdad"
+        app:layout_constraintTop_toTopOf="@id/guidelaneHorItemMitad"
+        app:layout_constraintEnd_toStartOf="@id/activoAlumno"
+        />
+
+    <TextView
+        android:id="@+id/emailAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cursoAlumno"
+        app:layout_constraintEnd_toStartOf="@id/guidelaneVerItemMitad"
+        />
+
+    <TextView
+        android:id="@+id/activoAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guidelaneVerItemMitad"
+        android:layout_marginStart="15dp"
+        />
+
+    <TextView
+        android:id="@+id/selectedAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activoAlumno"
+        app:layout_constraintStart_toEndOf="@id/guidelaneVerItemMitad"
+        />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelaneHorItemMitad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelaneVerItemMitad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelaneVerEntreCursoYEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
