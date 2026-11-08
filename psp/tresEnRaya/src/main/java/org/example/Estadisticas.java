@@ -13,8 +13,8 @@ import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 
 import java.io.IOException;
 
-@WebServlet("/tres")
-public class MiPrimerServlet extends HttpServlet {
+@WebServlet("/estadisticas")
+public class Estadisticas extends HttpServlet {
 
 
     @Override

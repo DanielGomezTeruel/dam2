@@ -15,7 +15,7 @@ public final class Constants {
     public static final String URL_HOLA = UrlConstants.URL_HOLA;
     public static final String URL_ADIVINA = UrlConstants.URL_ADIVINA;
     public static final String TEMPLATE_HOLA = UrlConstants.TEMPLATE_HOLA;
-    public static final String TEMPLATE_ADIVINA = UrlConstants.TEMPLATE_ADIVINA;
+    public static final String TEMPLATE_SETUP = UrlConstants.TEMPLATE_SETUP;
 
     // Configuración de Thymeleaf
     public static final String TEMPLATE_ENGINE_ATTR = ThymeleafConstants.TEMPLATE_ENGINE_ATTR;

@@ -10,25 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya casi completado">
-      <change afterPath="$PROJECT_DIR$/../examenServlet/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/GameConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/MessageConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/UrlConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/abrirCaja.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/cajaFuerte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/guardarSecretos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/abrirCaja.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/cajaFuerte.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/setupPartida.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/UrlConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/UrlConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiPrimerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -47,61 +53,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0000000025442823" />
-      <entry key="M2" value="1.0001568824440996" />
-      <entry key="M5" value="1.1631088798529192" />
-      <entry key="M10" value="3.1933116190326123" />
-      <entry key="M15" value="6.625481440749225" />
-      <entry key="M30" value="16.535900924096843" />
-      <entry key="H1" value="28.120440469953866" />
-      <entry key="H2" value="37.52426669988751" />
-      <entry key="H4" value="43.63902993956583" />
-      <entry key="D1" value="49.6744865078333" />
-      <entry key="W1" value="50.808045543318954" />
+      <entry key="MS100" value="1.114757807112861E-41" />
+      <entry key="MS500" value="9.342224437685815E-9" />
+      <entry key="S2" value="0.016302665706472614" />
+      <entry key="S5" value="0.2921368030552526" />
+      <entry key="S10" value="0.7933508046302733" />
+      <entry key="S30" value="2.3521851615290785" />
+      <entry key="S60" value="4.7822239934663395" />
+      <entry key="M2" value="8.977756759411145" />
+      <entry key="M5" value="17.017921520706448" />
+      <entry key="M10" value="26.1306416906097" />
+      <entry key="M15" value="34.79564265589559" />
+      <entry key="M30" value="57.95659108475021" />
+      <entry key="H1" value="87.99452051211802" />
+      <entry key="H2" value="115.71062548213375" />
+      <entry key="H4" value="135.43872331311366" />
+      <entry key="D1" value="156.2504582802049" />
+      <entry key="W1" value="160.30820372124865" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="5.021011306400247E-133" />
-      <entry key="S10" value="9.782139371979177E-67" />
-      <entry key="S30" value="1.5671042518933434E-22" />
-      <entry key="S60" value="1.7963987858909254E-11" />
-      <entry key="M2" value="7.308984795988199E-6" />
-      <entry key="M5" value="0.02857550539852927" />
-      <entry key="M10" value="0.5568717567438213" />
-      <entry key="M15" value="1.557327330586283" />
-      <entry key="M30" value="4.508882649895991" />
-      <entry key="H1" value="7.845638178598072" />
-      <entry key="H2" value="10.440098231460274" />
-      <entry key="H4" value="12.076804819715273" />
-      <entry key="D1" value="13.657250701029007" />
-      <entry key="W1" value="13.950458178743213" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000001712966178" />
+      <entry key="S5" value="1.0019663718678267" />
+      <entry key="S10" value="1.0458068510204914" />
+      <entry key="S30" value="1.5933499233814765" />
+      <entry key="S60" value="2.5755814099283025" />
+      <entry key="M2" value="4.243257611677317" />
+      <entry key="M5" value="7.034709265451737" />
+      <entry key="M10" value="9.380011119171982" />
+      <entry key="M15" value="11.264317696212343" />
+      <entry key="M30" value="15.96197956167986" />
+      <entry key="H1" value="22.16620355584249" />
+      <entry key="H2" value="28.087594383729257" />
+      <entry key="H4" value="32.37963286614587" />
+      <entry key="D1" value="36.95190924327527" />
+      <entry key="W1" value="37.84725127895963" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.953370095688829E-4" />
-      <entry key="MS500" value="0.23358183672079508" />
-      <entry key="S2" value="0.6952000061367136" />
-      <entry key="S5" value="0.8646570899245135" />
-      <entry key="S10" value="0.9298693940142957" />
-      <entry key="S30" value="0.9760543121588514" />
-      <entry key="S60" value="0.9879546129328748" />
-      <entry key="M2" value="0.9941230584336201" />
-      <entry key="M5" value="1.1890212863514575" />
-      <entry key="M10" value="3.746478981435634" />
-      <entry key="M15" value="8.177156494323192" />
-      <entry key="M30" value="21.036837284861853" />
-      <entry key="H1" value="35.95891675795349" />
-      <entry key="H2" value="47.9594546828702" />
-      <entry key="H4" value="55.71294256935491" />
-      <entry key="D1" value="63.33118284341229" />
-      <entry key="W1" value="64.75842258065377" />
+      <entry key="MS100" value="7.400959797414053E-4" />
+      <entry key="MS500" value="0.23651441840236725" />
+      <entry key="S2" value="0.7119012946478734" />
+      <entry key="S5" value="1.145166204584183" />
+      <entry key="S10" value="1.740993754219041" />
+      <entry key="S30" value="3.858293874587874" />
+      <entry key="S60" value="7.264222983663893" />
+      <entry key="M2" value="13.128659136165258" />
+      <entry key="M5" value="23.981052286862482" />
+      <entry key="M10" value="35.45780898131303" />
+      <entry key="M15" value="46.015217982775205" />
+      <entry key="M30" value="73.8844756223197" />
+      <entry key="H1" value="110.13623003241548" />
+      <entry key="H2" value="143.7824920038216" />
+      <entry key="H4" value="167.80923649289682" />
+      <entry key="D1" value="193.20062445367986" />
+      <entry key="W1" value="198.1551997390168" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -115,6 +121,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -122,10 +129,10 @@
     "Tomcat Server.tomcatch.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "psp",
+    "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/2dam/Desktop/dam2/psp/tresEnRaya/src/main",
+    "last_opened_file_path": "C:/Users/madrid/Documents/dam2/psp/tresEnRaya",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -144,6 +151,7 @@
       <recent name="C:\Users\2dam\Desktop\dam2\psp\tresEnRaya\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
       <recent name="config" />
     </key>
   </component>
@@ -162,7 +170,7 @@
   </component>
   <component name="RunManager">
     <configuration name="tomcatch" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/tres" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/setup" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="tresEnRaya:war">

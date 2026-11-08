@@ -1,0 +1,121 @@
+package org.example;
+
+import config.ThymeleafConstants;
+import config.UrlConstants;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.example.domain.Partida;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.WebContext;
+import org.thymeleaf.web.servlet.JakartaServletWebApplication;
+
+import java.io.IOException;
+
+@WebServlet("/juego")
+public class MainGame extends HttpServlet {
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Partida partida = (Partida) req.getSession().getAttribute("partida");
+        String coordenada = req.getParameter("coordenada");
+        String ganador = "";
+        String marca = "";
+        String mensajeCompletado = "";
+
+
+
+        if (partida == null) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una partida creada. Ve a /setup");
+        }
+
+
+        if (coordenada == null) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parámetro requerido");
+            return;
+        }
+
+        String[] tablero = partida.getTablero();
+        String turnoActual = partida.getTurno();
+
+
+        if (tablero == null) {
+            tablero = new String[]{"-", "-", "-", "-", "-", "-", "-", "-", "-"};
+            partida.setTablero(tablero);
+        }
+
+        if (!tablero[Integer.parseInt(coordenada) - 1].equals("-")) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Ese hueco no está vacío");
+            return;
+        }
+
+        if(partida.getTurno().equals(partida.getJugador1())){
+            marca = partida.getMarca1();
+            partida.setTurno(partida.getJugador2());
+        }else{
+            marca = partida.getMarca2();
+            partida.setTurno(partida.getJugador1());
+        }
+
+
+        tablero[Integer.parseInt(coordenada) - 1] = marca;
+
+        String fila1 = tablero[0] + " " + tablero[1] + " " + tablero[2];
+        String fila2 = tablero[3] + " " + tablero[4] + " " + tablero[5];
+        String fila3 = tablero[6] + " " + tablero[7] + " " + tablero[8];
+
+
+        boolean completado = true;
+
+        for (int i = 0; i < 9; i++) {
+            if (tablero[i].equals("-")) {
+                completado = false;
+            }
+        }
+
+        if (completado) {
+            mensajeCompletado = "Ya no quedan huecos";
+        }
+
+
+
+
+        for (int i = 0; i < 7; i = i + 3) {
+            if (tablero[i].equals(tablero[i + 1]) && tablero[i + 1].equals(tablero[i + 2]) && !tablero[i].equals("-")) {
+                ganador = "Ha ganado " + turnoActual;
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if (tablero[i].equals(tablero[i + 3]) && tablero[i + 3].equals(tablero[i + 6]) && !tablero[i].equals("-")) {
+                ganador = "Ha ganado " + turnoActual;
+            }
+        }
+
+        if (tablero[0].equals(tablero[4]) && tablero[4].equals(tablero[8]) && !tablero[0].equals("-")) {
+            ganador = "Ha ganado " + turnoActual;
+        }
+
+        if (tablero[2].equals(tablero[4]) && tablero[4].equals(tablero[6]) && !tablero[2].equals("-")) {
+            ganador = "Ha ganado " + turnoActual;
+        }
+
+        var webExchange = JakartaServletWebApplication.buildApplication(getServletContext())
+                .buildExchange(req, resp);
+        WebContext ctx = new WebContext(webExchange);
+        ctx.setVariable("fila1", fila1);
+        ctx.setVariable("fila2", fila2);
+        ctx.setVariable("fila3", fila3);
+        ctx.setVariable("ganador", ganador);
+        ctx.setVariable("mensaje", mensajeCompletado);
+
+        resp.setContentType(ThymeleafConstants.CONTENT_TYPE);
+        ((TemplateEngine) getServletContext().getAttribute(ThymeleafConstants.TEMPLATE_ENGINE_ATTR))
+                .process(UrlConstants.TEMPLATE_TRES_EN_RAYA, ctx, resp.getWriter());
+
+    }
+}
