@@ -9,31 +9,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya casi completado">
-      <change afterPath="$PROJECT_DIR$/../examenServlet/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/GameConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/MessageConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/ThymeleafInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/config/UrlConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/abrirCaja.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/cajaFuerte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/java/org/example/guardarSecretos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/abrirCaja.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examenServlet/src/main/webapp/WEB-INF/templates/cajaFuerte.html" afterDir="false" />
+    <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya enhanced: setup y partida">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Torneo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/../.." value="moviles" />
+        <entry key="$PROJECT_DIR$/../.." value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -47,61 +53,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0000000025442823" />
-      <entry key="M2" value="1.0001568824440996" />
-      <entry key="M5" value="1.1631088798529192" />
-      <entry key="M10" value="3.1933116190326123" />
-      <entry key="M15" value="6.625481440749225" />
-      <entry key="M30" value="16.535900924096843" />
-      <entry key="H1" value="28.120440469953866" />
-      <entry key="H2" value="37.52426669988751" />
-      <entry key="H4" value="43.63902993956583" />
-      <entry key="D1" value="49.6744865078333" />
-      <entry key="W1" value="50.808045543318954" />
+      <entry key="MS100" value="5.474897002123042E-4" />
+      <entry key="MS500" value="0.3980559175535976" />
+      <entry key="S2" value="1.8166510714097477" />
+      <entry key="S5" value="2.8234516896610997" />
+      <entry key="S10" value="3.3402494817243893" />
+      <entry key="S30" value="3.7617838782284956" />
+      <entry key="S60" value="3.939781097908434" />
+      <entry key="M2" value="4.902692590326582" />
+      <entry key="M5" value="11.509494497822885" />
+      <entry key="M10" value="23.70955108368187" />
+      <entry key="M15" value="32.970995085112584" />
+      <entry key="M30" value="52.66712353087339" />
+      <entry key="H1" value="79.54181756955117" />
+      <entry key="H2" value="110.57468922497529" />
+      <entry key="H4" value="148.15948602612355" />
+      <entry key="D1" value="323.3743055789915" />
+      <entry key="W1" value="585.4819931060294" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="5.021011306400247E-133" />
-      <entry key="S10" value="9.782139371979177E-67" />
-      <entry key="S30" value="1.5671042518933434E-22" />
-      <entry key="S60" value="1.7963987858909254E-11" />
-      <entry key="M2" value="7.308984795988199E-6" />
-      <entry key="M5" value="0.02857550539852927" />
-      <entry key="M10" value="0.5568717567438213" />
-      <entry key="M15" value="1.557327330586283" />
-      <entry key="M30" value="4.508882649895991" />
-      <entry key="H1" value="7.845638178598072" />
-      <entry key="H2" value="10.440098231460274" />
-      <entry key="H4" value="12.076804819715273" />
-      <entry key="D1" value="13.657250701029007" />
-      <entry key="W1" value="13.950458178743213" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0002761998200307" />
+      <entry key="S2" value="1.1289157108887664" />
+      <entry key="S5" value="1.4406789836398701" />
+      <entry key="S10" value="1.6638365639523292" />
+      <entry key="S30" value="1.8724646962937528" />
+      <entry key="S60" value="1.9597244095898632" />
+      <entry key="M2" value="2.383728087755019" />
+      <entry key="M5" value="5.023903269723175" />
+      <entry key="M10" value="9.260560791466139" />
+      <entry key="M15" value="12.341402413801383" />
+      <entry key="M30" value="19.47671089638284" />
+      <entry key="H1" value="30.65921000709501" />
+      <entry key="H2" value="44.3904660776014" />
+      <entry key="H4" value="60.83066280809664" />
+      <entry key="D1" value="125.03833193141138" />
+      <entry key="W1" value="208.78113837428415" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.953370095688829E-4" />
-      <entry key="MS500" value="0.23358183672079508" />
-      <entry key="S2" value="0.6952000061367136" />
-      <entry key="S5" value="0.8646570899245135" />
-      <entry key="S10" value="0.9298693940142957" />
-      <entry key="S30" value="0.9760543121588514" />
-      <entry key="S60" value="0.9879546129328748" />
-      <entry key="M2" value="0.9941230584336201" />
-      <entry key="M5" value="1.1890212863514575" />
-      <entry key="M10" value="3.746478981435634" />
-      <entry key="M15" value="8.177156494323192" />
-      <entry key="M30" value="21.036837284861853" />
-      <entry key="H1" value="35.95891675795349" />
-      <entry key="H2" value="47.9594546828702" />
-      <entry key="H4" value="55.71294256935491" />
-      <entry key="D1" value="63.33118284341229" />
-      <entry key="W1" value="64.75842258065377" />
+      <entry key="MS100" value="0.0017297496621085384" />
+      <entry key="MS500" value="0.5148945641363752" />
+      <entry key="S2" value="2.4090554411394116" />
+      <entry key="S5" value="3.9508691258523156" />
+      <entry key="S10" value="4.818054663258236" />
+      <entry key="S30" value="5.563526865707463" />
+      <entry key="S60" value="5.8620106260677485" />
+      <entry key="M2" value="7.260653849247739" />
+      <entry key="M5" value="16.503783980537925" />
+      <entry key="M10" value="32.938231896738834" />
+      <entry key="M15" value="45.28258924704053" />
+      <entry key="M30" value="72.11914024960194" />
+      <entry key="H1" value="110.18095898870753" />
+      <entry key="H2" value="154.95004591227053" />
+      <entry key="H4" value="208.97903200924398" />
+      <entry key="D1" value="448.40817087186036" />
+      <entry key="W1" value="794.2620092722583" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -113,37 +119,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Tomcat Server.tomcatch.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "psp",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/2dam/Desktop/dam2/psp/tresEnRaya/src/main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.tomcatch.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;psp&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/madrid/Documents/dam2/psp/tresEnRaya&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\2dam\Desktop\dam2\psp\tresEnRaya\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
       <recent name="config" />
     </key>
   </component>
@@ -162,7 +170,7 @@
   </component>
   <component name="RunManager">
     <configuration name="tomcatch" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/tres" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/setup" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="tresEnRaya:war">
@@ -284,6 +292,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tres en raya casi completado" />
-    <option name="LAST_COMMIT_MESSAGE" value="tres en raya casi completado" />
+    <MESSAGE value="tres en raya enhanced: setup y partida" />
+    <option name="LAST_COMMIT_MESSAGE" value="tres en raya enhanced: setup y partida" />
   </component>
 </project>
