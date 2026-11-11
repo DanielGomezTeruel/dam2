@@ -1,6 +1,8 @@
 package org.example.domain;
 
 public class Partida {
+
+    private int id = 0;
     private String jugador1;
     private String jugador2;
     private String marca1;
@@ -14,6 +16,8 @@ public class Partida {
 
     private String[] tablero;
 
+    private boolean finalizada;
+
     public Partida(String jugador1, String jugador2, String marca1, String marca2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
@@ -21,7 +25,8 @@ public class Partida {
         this.marca2 = marca2;
         turno = Math.random()>0.5?jugador1:jugador2;
         numMovimientos = 0;
-        tablero = null;
+        tablero = new String[]{"-", "-", "-", "-", "-", "-", "-", "-", "-"};
+        finalizada = false;
     }
 
     public String getJugador1() {
@@ -87,4 +92,25 @@ public class Partida {
     public void setTablero(String[] tablero) {
         this.tablero = tablero;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isFinalizada() {
+        return finalizada;
+    }
+
+    public void setFinalizada(boolean finalizada) {
+        this.finalizada = finalizada;
+    }
+
+    public void addMovimiento() {
+        numMovimientos++;
+    }
+
 }

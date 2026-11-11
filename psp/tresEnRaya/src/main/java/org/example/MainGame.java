@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.domain.Partida;
+import org.example.domain.Torneo;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.web.servlet.JakartaServletWebApplication;
@@ -21,16 +22,20 @@ public class MainGame extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Partida partida = (Partida) req.getSession().getAttribute("partida");
-        String coordenada = req.getParameter("coordenada");
-        String ganador = "";
-        String marca = "";
-        String mensajeCompletado = "";
+        Torneo torneo = (Torneo) req.getSession().getAttribute("torneo");
+        if(torneo==null){
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una partida creada. Ve a /setup");
+            return;
+        }
 
+        Partida partida = torneo.getLatestGame();
+        String coordenada = req.getParameter("coordenada");
+        String marca = "";
 
 
         if (partida == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una partida creada. Ve a /setup");
+            return;
         }
 
 
@@ -43,17 +48,12 @@ public class MainGame extends HttpServlet {
         String turnoActual = partida.getTurno();
 
 
-        if (tablero == null) {
-            tablero = new String[]{"-", "-", "-", "-", "-", "-", "-", "-", "-"};
-            partida.setTablero(tablero);
-        }
-
         if (!tablero[Integer.parseInt(coordenada) - 1].equals("-")) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Ese hueco no está vacío");
             return;
         }
 
-        if(partida.getTurno().equals(partida.getJugador1())){
+        if(turnoActual.equals(partida.getJugador1())){
             marca = partida.getMarca1();
             partida.setTurno(partida.getJugador2());
         }else{
@@ -69,16 +69,19 @@ public class MainGame extends HttpServlet {
         String fila3 = tablero[6] + " " + tablero[7] + " " + tablero[8];
 
 
+        partida.addMovimiento();
+
         boolean completado = true;
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9&&completado; i++) {
             if (tablero[i].equals("-")) {
                 completado = false;
             }
         }
 
         if (completado) {
-            mensajeCompletado = "Ya no quedan huecos";
+            partida.setGanador(null);
+            partida.setFinalizada(true);
         }
 
 
@@ -86,23 +89,44 @@ public class MainGame extends HttpServlet {
 
         for (int i = 0; i < 7; i = i + 3) {
             if (tablero[i].equals(tablero[i + 1]) && tablero[i + 1].equals(tablero[i + 2]) && !tablero[i].equals("-")) {
-                ganador = "Ha ganado " + turnoActual;
+                partida.setGanador(turnoActual);
+                partida.setFinalizada(true);
             }
         }
 
         for (int i = 0; i < 3; i++) {
             if (tablero[i].equals(tablero[i + 3]) && tablero[i + 3].equals(tablero[i + 6]) && !tablero[i].equals("-")) {
-                ganador = "Ha ganado " + turnoActual;
+                partida.setGanador(turnoActual);
+                partida.setFinalizada(true);
             }
         }
 
         if (tablero[0].equals(tablero[4]) && tablero[4].equals(tablero[8]) && !tablero[0].equals("-")) {
-            ganador = "Ha ganado " + turnoActual;
+            partida.setGanador(turnoActual);
+            partida.setFinalizada(true);
         }
 
         if (tablero[2].equals(tablero[4]) && tablero[4].equals(tablero[6]) && !tablero[2].equals("-")) {
-            ganador = "Ha ganado " + turnoActual;
+            partida.setGanador(turnoActual);
+            partida.setFinalizada(true);
         }
+        String estadisticas ="";
+        String ganador ="";
+        String perdedor ="";
+        String numMovimientos ="";
+
+        if(partida.isFinalizada()){
+            estadisticas = "---Estadísticas---";
+            if(partida.getGanador()!=null) {
+                ganador = "Ha ganado " + partida.getGanador();
+                perdedor = "Ha perdido " + partida.getTurno();
+            }else{
+                ganador = "Empate";
+            }
+            numMovimientos = "Nº movimientos: "+partida.getNumMovimientos();
+        }
+
+
 
         var webExchange = JakartaServletWebApplication.buildApplication(getServletContext())
                 .buildExchange(req, resp);
@@ -110,8 +134,10 @@ public class MainGame extends HttpServlet {
         ctx.setVariable("fila1", fila1);
         ctx.setVariable("fila2", fila2);
         ctx.setVariable("fila3", fila3);
+        ctx.setVariable("estadisticas", estadisticas);
         ctx.setVariable("ganador", ganador);
-        ctx.setVariable("mensaje", mensajeCompletado);
+        ctx.setVariable("perdedor", perdedor);
+        ctx.setVariable("numMovimientos", numMovimientos);
 
         resp.setContentType(ThymeleafConstants.CONTENT_TYPE);
         ((TemplateEngine) getServletContext().getAttribute(ThymeleafConstants.TEMPLATE_ENGINE_ATTR))

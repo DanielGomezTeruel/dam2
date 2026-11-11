@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.domain.Partida;
+import org.example.domain.Torneo;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.web.servlet.JakartaServletWebApplication;
@@ -20,6 +21,12 @@ public class SetupPartida extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Torneo torneo =(Torneo) req.getSession().getAttribute("torneo");
+        if(torneo==null){
+            torneo = new Torneo();
+            req.getSession().setAttribute("torneo", torneo);
+        }
 
         String jugador1 = req.getParameter("jugador1");
         String marca1 = req.getParameter("marca1");
@@ -35,7 +42,9 @@ public class SetupPartida extends HttpServlet {
             return;
         }
 
-        req.getSession().setAttribute("partida", new Partida(jugador1, jugador2, marca1, marca2));
+        torneo.addPartida(new Partida(jugador1, jugador2, marca1, marca2));
+        torneo.addJugador(jugador1);
+        torneo.addJugador(jugador2);
 
         var webExchange = JakartaServletWebApplication.buildApplication(getServletContext())
                 .buildExchange(req, resp);

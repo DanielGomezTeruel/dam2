@@ -7,11 +7,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.domain.Partida;
+import org.example.domain.Torneo;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/estadisticas")
 public class Estadisticas extends HttpServlet {
@@ -19,102 +23,96 @@ public class Estadisticas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        String marca = req.getParameter("marca");
-        String coordenada = req.getParameter("coordenada");
-        String ganador = "";
-        String mensajeCompletado = "";
-
-        if (marca == null || coordenada == null) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parámetro requerido");
+        Torneo torneo = (Torneo) req.getSession().getAttribute("torneo");
+        if(torneo==null){
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay torneo. Ve a /setup");
             return;
         }
 
-        if(req.getSession().getAttribute("marca") == null){
-            req.getSession().setAttribute("marca", "X");
-        }
+        List<Partida> partidas = torneo.getPartidas();
 
-        String turno = req.getSession().getAttribute("marca").toString();
-
-        if(!(marca.equalsIgnoreCase("X")||marca.equalsIgnoreCase("O"))){
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Marca errónea, debe ser X u O");
-            return;
-        }
-
-        if(!marca.equalsIgnoreCase(turno)){
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No es tu turno");
-            return;
-        }
-
-        String[] Tablero = (String[]) req.getSession().getAttribute("Tablero");
-        if (Tablero == null) {
-            Tablero = new String[]{"-", "-", "-", "-", "-", "-", "-", "-", "-"};
-            req.getSession().setAttribute("Tablero", Tablero);
-        }
-
-        if(!Tablero[Integer.parseInt(coordenada) - 1].equals("-")){
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Ese hueco no está vacío");
-            return;
-        }
-
-        Tablero[Integer.parseInt(coordenada) - 1] = turno;
-
-        String fila1 = Tablero[0] + " " + Tablero[1] + " " + Tablero[2];
-        String fila2 = Tablero[3] + " " + Tablero[4] + " " + Tablero[5];
-        String fila3 = Tablero[6] + " " + Tablero[7] + " " + Tablero[8];
+        String nombre = req.getParameter("nombre");
+        String numPartida = req.getParameter("numPartida");
 
 
-        boolean completado=true;
+        PrintWriter out = resp.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<body>");
+        out.println("<h1>Estadisticas</h1>");
+        out.println("- - - - - - - -");
+        if(nombre==null&&numPartida==null) {
 
-        for (int i = 0; i < 9; i++) {
-            if(Tablero[i].equals("-")){
-                completado=false;
+            partidas.forEach(partida -> {
+                out.println("<h1>Partida " + partida.getId() + "</h1>");
+                if (partida.getGanador() != null) {
+                    out.println("<p> Ganador: " + partida.getGanador() + "</p>");
+                    out.println("<p> Perdedor: " + partida.getTurno() + " </p>");
+                } else {
+                    out.println("<p> Empate entre " + partida.getJugador1() + " y " + partida.getJugador2() + " </p>");
+                }
+                out.println("<p> Marca usada por " + partida.getJugador1() + ": " + partida.getMarca1());
+                out.println("<p> Marca usada por " + partida.getJugador2() + ": " + partida.getMarca2());
+                out.println("<p> Numero movimientos: " + partida.getNumMovimientos() + "</p>");
+                out.println("- - - - - - -");
+            });
+        }else if(nombre==null){
+            int id = Integer.parseInt(numPartida);
+            Partida partida = partidas.stream().filter(p->p.getId()==id).toList().getFirst();
+            if(partida!=null) {
+                String[] tablero = partida.getTablero();
+                String fila1 = tablero[0] + " " + tablero[1] + " " + tablero[2];
+                String fila2 = tablero[3] + " " + tablero[4] + " " + tablero[5];
+                String fila3 = tablero[6] + " " + tablero[7] + " " + tablero[8];
+
+
+                out.println("<h1>Tablero de la partida " + id + "</h1>");
+                out.println("<p>" + fila1 + "</p>");
+                out.println("<p>" + fila2 + "</p>");
+                out.println("<p>" + fila3 + "</p>");
+            }else{
+                out.println("<h1>Partida inexistente</h1>");
             }
-        }
 
-        if(completado){
-            mensajeCompletado="Ya no quedan huecos";
-        }
+        } else if(numPartida==null){
+            List<Partida> partidasJugador = torneo.getPartidasByName(nombre);
+            if(!partidasJugador.isEmpty()){
+                out.println("<h1> Estadisticas de "+nombre+"</h1>");
+                out.println("<h2> Victorias totales: "+torneo.getWins(nombre)+"</h2>");
+                out.println("<h2> Derrotas totales: "+torneo.getLoses(nombre)+"</h2>");
 
 
-        if(!marca.equalsIgnoreCase("O")){
-            req.getSession().setAttribute("marca", "O");
-        }else{
-            req.getSession().setAttribute("marca", "X");
-        }
+                partidasJugador.forEach(partida -> {
+                        String contrincante = partida.getJugador1();
+                        String marca = partida.getMarca2();
 
-        for (int i = 0; i < 7; i=i+3) {
-            if(Tablero[i].equals(Tablero[i+1])&&Tablero[i+1].equals(Tablero[i+2])&&!Tablero[i].equals("-")){
-                ganador = "Ha ganado "+Tablero[i];
+                        if(partida.getJugador1().equals(nombre)){
+                            contrincante = partida.getJugador2();
+                            marca = partida.getMarca1();
+                        }
+
+                        out.println("<p> ------Partida "+partida.getId()+"------- </p>");
+
+                        if(partida.getGanador()!=null) {
+                            if (partida.getGanador().equals(nombre)) {
+                                out.println("<p> Ganador contra "+contrincante+" </p>");
+                            } else {
+                                out.println("<p> Perdedor contra "+contrincante+"</p>");
+                            }
+                        }else{
+                            out.println("<p> Empate con "+contrincante+"</p>");
+                        }
+                        out.println("<p> Marca utilizada: "+marca+"</p>");
+                        out.println("<p> Numero de movimientos: "+partida.getNumMovimientos()+"</p>");
+                });
+
+            }else{
+                out.println("<h1>No se encuentran partidas asociadas a este jugador</h1>");
             }
+
         }
 
-        for (int i = 0; i < 3; i++) {
-            if(Tablero[i].equals(Tablero[i+3])&&Tablero[i+3].equals(Tablero[i+6])&&!Tablero[i].equals("-")){
-                ganador = "Ha ganado "+Tablero[i];
-            }
-        }
-
-        if(Tablero[0].equals(Tablero[4])&&Tablero[4].equals(Tablero[8])&&!Tablero[0].equals("-")){
-            ganador = "Ha ganado "+Tablero[0];
-        }
-
-        if(Tablero[2].equals(Tablero[4])&&Tablero[4].equals(Tablero[6])&&!Tablero[2].equals("-")){
-            ganador = "Ha ganado "+Tablero[2];
-        }
-
-        var webExchange = JakartaServletWebApplication.buildApplication(getServletContext())
-                .buildExchange(req, resp);
-        WebContext ctx = new WebContext(webExchange);
-        ctx.setVariable("fila1", fila1);
-        ctx.setVariable("fila2", fila2);
-        ctx.setVariable("fila3", fila3);
-        ctx.setVariable("ganador", ganador);
-        ctx.setVariable("mensaje", mensajeCompletado);
-
-        resp.setContentType(ThymeleafConstants.CONTENT_TYPE);
-        ((TemplateEngine) getServletContext().getAttribute(ThymeleafConstants.TEMPLATE_ENGINE_ATTR))
-                .process(UrlConstants.TEMPLATE_TRES_EN_RAYA, ctx, resp.getWriter());
-
+        out.println("</body>");
+        out.println("</html>");
     }
 }
