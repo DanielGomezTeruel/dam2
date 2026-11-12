@@ -1,147 +1,88 @@
 package org.example;
 
-import config.ThymeleafConstants;
-import config.UrlConstants;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.domain.Partida;
-import org.example.domain.Torneo;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.WebContext;
-import org.thymeleaf.web.servlet.JakartaServletWebApplication;
+import org.example.domain.Carrera;
+import org.example.domain.Corredor;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet("/juego")
+@WebServlet("/carrera")
 public class MainGame extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Torneo torneo = (Torneo) req.getSession().getAttribute("torneo");
-        if(torneo==null){
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una partida creada. Ve a /setup");
+        Carrera carrera = (Carrera) req.getSession().getAttribute("carrera");
+        if (carrera == null) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una carrera creada. Ve a /setup");
             return;
         }
-
-        Partida partida = torneo.getLatestGame();
-        String coordenada = req.getParameter("coordenada");
-        String marca = "";
-
-
-        if (partida == null) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "No hay una partida creada. Ve a /setup");
-            return;
-        }
-
-
-        if (coordenada == null) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parámetro requerido");
-            return;
-        }
-
-        String[] tablero = partida.getTablero();
-        String turnoActual = partida.getTurno();
-
-
-        if (!tablero[Integer.parseInt(coordenada) - 1].equals("-")) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Ese hueco no está vacío");
-            return;
-        }
-
-        if(turnoActual.equals(partida.getJugador1())){
-            marca = partida.getMarca1();
-            partida.setTurno(partida.getJugador2());
-        }else{
-            marca = partida.getMarca2();
-            partida.setTurno(partida.getJugador1());
-        }
-
-
-        tablero[Integer.parseInt(coordenada) - 1] = marca;
-
-        String fila1 = tablero[0] + " " + tablero[1] + " " + tablero[2];
-        String fila2 = tablero[3] + " " + tablero[4] + " " + tablero[5];
-        String fila3 = tablero[6] + " " + tablero[7] + " " + tablero[8];
-
-
-        partida.addMovimiento();
-
-        boolean completado = true;
-
-        for (int i = 0; i < 9&&completado; i++) {
-            if (tablero[i].equals("-")) {
-                completado = false;
+        if (!(boolean) req.getSession().getAttribute("carreraEmpezada")) {
+            String password = req.getParameter("contraseña");
+            if (password == null) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Un administrador tiene que introducir la contrasenha para empezar");
+                return;
+            }
+            if (!password.equals("contraseña")) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Contrasenha incorrecta");
+                return;
+            } else {
+                req.getSession().setAttribute("carreraEmpezada", true);
             }
         }
 
-        if (completado) {
-            partida.setGanador(null);
-            partida.setFinalizada(true);
-        }
+        String nombreCorredor = req.getParameter("corredor");
+        PrintWriter out = resp.getWriter();
 
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<body>");
+        out.println("<h1>Carrera</h1>");
+        out.println("- - - - - - - -");
 
+        if (!carrera.isCompletada()) {
 
+            if (nombreCorredor == null) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Nombre de corredor requerido");
+                return;
+            }
 
-        for (int i = 0; i < 7; i = i + 3) {
-            if (tablero[i].equals(tablero[i + 1]) && tablero[i + 1].equals(tablero[i + 2]) && !tablero[i].equals("-")) {
-                partida.setGanador(turnoActual);
-                partida.setFinalizada(true);
+            if (!carrera.corredorExists(nombreCorredor)) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Corredor inexistente");
+                return;
+            }
+
+            carrera.checkTurno();
+
+            Corredor corredor = carrera.getCorredorByName(nombreCorredor);
+
+            if (!corredor.isMovedThisTurn()) {
+                out.println("<h2>" + carrera.moveCorredor(corredor) + "</h2>");
+            } else {
+                out.println("<h2>" + corredor.getNombre() + " ya ha movido en este turno</h2>");
+            }
+
+            if (corredor.getPosicion() >= carrera.getLongitud()) {
+                carrera.setCompletada(true);
             }
         }
 
-        for (int i = 0; i < 3; i++) {
-            if (tablero[i].equals(tablero[i + 3]) && tablero[i + 3].equals(tablero[i + 6]) && !tablero[i].equals("-")) {
-                partida.setGanador(turnoActual);
-                partida.setFinalizada(true);
-            }
+        if (carrera.isCompletada()) {
+            out.println("<h1> " + carrera.getGanador() + " ha ganado la carrera</h1>");
         }
 
-        if (tablero[0].equals(tablero[4]) && tablero[4].equals(tablero[8]) && !tablero[0].equals("-")) {
-            partida.setGanador(turnoActual);
-            partida.setFinalizada(true);
-        }
+        carrera.getCorredores().forEach(j -> {
+            out.println("<h3>" + j.getNombre() + ": " + j.getPosicion() + "/" + carrera.getLongitud() + "</h3>");
+        });
 
-        if (tablero[2].equals(tablero[4]) && tablero[4].equals(tablero[6]) && !tablero[2].equals("-")) {
-            partida.setGanador(turnoActual);
-            partida.setFinalizada(true);
-        }
-        String estadisticas ="";
-        String ganador ="";
-        String perdedor ="";
-        String numMovimientos ="";
-
-        if(partida.isFinalizada()){
-            estadisticas = "---Estadísticas---";
-            if(partida.getGanador()!=null) {
-                ganador = "Ha ganado " + partida.getGanador();
-                perdedor = "Ha perdido " + partida.getTurno();
-            }else{
-                ganador = "Empate";
-            }
-            numMovimientos = "Nº movimientos: "+partida.getNumMovimientos();
-        }
-
-
-
-        var webExchange = JakartaServletWebApplication.buildApplication(getServletContext())
-                .buildExchange(req, resp);
-        WebContext ctx = new WebContext(webExchange);
-        ctx.setVariable("fila1", fila1);
-        ctx.setVariable("fila2", fila2);
-        ctx.setVariable("fila3", fila3);
-        ctx.setVariable("estadisticas", estadisticas);
-        ctx.setVariable("ganador", ganador);
-        ctx.setVariable("perdedor", perdedor);
-        ctx.setVariable("numMovimientos", numMovimientos);
-
-        resp.setContentType(ThymeleafConstants.CONTENT_TYPE);
-        ((TemplateEngine) getServletContext().getAttribute(ThymeleafConstants.TEMPLATE_ENGINE_ATTR))
-                .process(UrlConstants.TEMPLATE_TRES_EN_RAYA, ctx, resp.getWriter());
-
+        out.println("</body>");
+        out.println("</html>");
     }
+
 }

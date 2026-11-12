@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="tresEnRaya:war" />
+      <artifact name="SetupCarrera:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,17 +10,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya enhanced: setup y partida">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Torneo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Corredor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Tirada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/GameConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/MessageConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ThymeleafConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ThymeleafInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/UrlConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Inscripciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/tresEnRaya-1.0-SNAPSHOT/WEB-INF/templates/tresEnRaya.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SetupCarrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Carrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/setupPartida.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/GameConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/MessageConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/ThymeleafConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/ThymeleafInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/UrlConstants.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,61 +69,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="5.474897002123042E-4" />
-      <entry key="MS500" value="0.3980559175535976" />
-      <entry key="S2" value="1.8166510714097477" />
-      <entry key="S5" value="2.8234516896610997" />
-      <entry key="S10" value="3.3402494817243893" />
-      <entry key="S30" value="3.7617838782284956" />
-      <entry key="S60" value="3.939781097908434" />
-      <entry key="M2" value="4.902692590326582" />
-      <entry key="M5" value="11.509494497822885" />
-      <entry key="M10" value="23.70955108368187" />
-      <entry key="M15" value="32.970995085112584" />
-      <entry key="M30" value="52.66712353087339" />
-      <entry key="H1" value="79.54181756955117" />
-      <entry key="H2" value="110.57468922497529" />
-      <entry key="H4" value="148.15948602612355" />
-      <entry key="D1" value="323.3743055789915" />
-      <entry key="W1" value="585.4819931060294" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="9.599978252249998E-110" />
+      <entry key="S5" value="3.560850513608059E-44" />
+      <entry key="S10" value="2.748799304005707E-22" />
+      <entry key="S30" value="1.4820179291712588E-7" />
+      <entry key="S60" value="8.779528355256946E-4" />
+      <entry key="M2" value="0.08995852152869512" />
+      <entry key="M5" value="2.8931769482486858" />
+      <entry key="M10" value="13.970170822334863" />
+      <entry key="M15" value="29.33802149392918" />
+      <entry key="M30" value="82.10940437891607" />
+      <entry key="H1" value="166.44280030901925" />
+      <entry key="H2" value="263.47452514607505" />
+      <entry key="H4" value="356.9033824294684" />
+      <entry key="D1" value="605.599607576339" />
+      <entry key="W1" value="892.2209055887838" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0002761998200307" />
-      <entry key="S2" value="1.1289157108887664" />
-      <entry key="S5" value="1.4406789836398701" />
-      <entry key="S10" value="1.6638365639523292" />
-      <entry key="S30" value="1.8724646962937528" />
-      <entry key="S60" value="1.9597244095898632" />
-      <entry key="M2" value="2.383728087755019" />
-      <entry key="M5" value="5.023903269723175" />
-      <entry key="M10" value="9.260560791466139" />
-      <entry key="M15" value="12.341402413801383" />
-      <entry key="M30" value="19.47671089638284" />
-      <entry key="H1" value="30.65921000709501" />
-      <entry key="H2" value="44.3904660776014" />
-      <entry key="H4" value="60.83066280809664" />
-      <entry key="D1" value="125.03833193141138" />
-      <entry key="W1" value="208.78113837428415" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000042749120512" />
+      <entry key="S60" value="1.002396930197914" />
+      <entry key="M2" value="1.0923984416828307" />
+      <entry key="M5" value="3.176886832320439" />
+      <entry key="M10" value="11.457787018270812" />
+      <entry key="M15" value="22.21412874603569" />
+      <entry key="M30" value="53.86127055463728" />
+      <entry key="H1" value="96.84596677882155" />
+      <entry key="H2" value="141.78186070988278" />
+      <entry key="H4" value="183.17830474723615" />
+      <entry key="D1" value="280.128277014201" />
+      <entry key="W1" value="374.0594533368017" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0017297496621085384" />
-      <entry key="MS500" value="0.5148945641363752" />
-      <entry key="S2" value="2.4090554411394116" />
-      <entry key="S5" value="3.9508691258523156" />
-      <entry key="S10" value="4.818054663258236" />
-      <entry key="S30" value="5.563526865707463" />
-      <entry key="S60" value="5.8620106260677485" />
-      <entry key="M2" value="7.260653849247739" />
-      <entry key="M5" value="16.503783980537925" />
-      <entry key="M10" value="32.938231896738834" />
-      <entry key="M15" value="45.28258924704053" />
-      <entry key="M30" value="72.11914024960194" />
-      <entry key="H1" value="110.18095898870753" />
-      <entry key="H2" value="154.95004591227053" />
-      <entry key="H4" value="208.97903200924398" />
-      <entry key="D1" value="448.40817087186036" />
-      <entry key="W1" value="794.2620092722583" />
+      <entry key="MS100" value="0.0040721318782856305" />
+      <entry key="MS500" value="0.33263226027017156" />
+      <entry key="S2" value="0.7594358449072649" />
+      <entry key="S5" value="0.895769841551761" />
+      <entry key="S10" value="0.9464511828677489" />
+      <entry key="S30" value="0.9818262827217146" />
+      <entry key="S60" value="0.9941110477661482" />
+      <entry key="M2" value="1.176907817128374" />
+      <entry key="M5" value="6.057950115107216" />
+      <entry key="M10" value="25.400621895212037" />
+      <entry key="M15" value="51.513536456411835" />
+      <entry key="M30" value="135.9174620980486" />
+      <entry key="H1" value="263.2367408399647" />
+      <entry key="H2" value="405.2161305816643" />
+      <entry key="H4" value="540.0543115163883" />
+      <entry key="D1" value="885.7198401614892" />
+      <entry key="W1" value="1266.2786792253548" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -119,33 +135,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.tomcatch.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;psp&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/madrid/Documents/dam2/psp/tresEnRaya&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Tomcat Server.tomcatch.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/madrid/Documents/dam2/psp/tresEnRaya",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\2dam\Desktop\dam2\psp\tresEnRaya\src\main" />
@@ -173,7 +189,7 @@
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/setup" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="tresEnRaya:war">
+        <artifact name="SetupCarrera:war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
@@ -253,7 +269,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="tresEnRaya:war" />
+          <artifact name="SetupCarrera:war" />
         </option>
       </method>
     </configuration>
@@ -261,8 +277,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
       </set>
     </attachedChunks>
   </component>
