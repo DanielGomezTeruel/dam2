@@ -30,10 +30,15 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Ejercicio3 {
 
     enum TipoPlato {
-        ENSALADA(2000, 10), PASTA(3000, 12), PIZZA(4000, 15), CARNE(5000,22);
+        ENSALADA(2000, 10),
+        PASTA(3000, 12),
+        PIZZA(4000, 15),
+        CARNE(5000,22);
+
         final int tiempoMs;
         final int precio;
-        TipoPlato(int tiempoMs, int precio) { this.tiempoMs = tiempoMs;
+        TipoPlato(int tiempoMs, int precio) {
+            this.tiempoMs = tiempoMs;
             this.precio = precio;
         }
         static TipoPlato aleatorio(Random r) {
@@ -98,29 +103,31 @@ public class Ejercicio3 {
         for (int i = 1; i <= COCINEROS; i++) {
             final int id = i;
             cocineros.add(
-            Thread.ofPlatform().name("cocinero-" + id).start(() -> {
+            Thread.ofVirtual().name("cocinero-" + id).start(() -> {
                 while (abierto) {
                     try {
 
                         long t0 = System.currentTimeMillis();
-                        Pedido p = mesa.take(); // espera si no hay pedidos
-                        cocinerosEsperandoMs.addAndGet(System.currentTimeMillis() - t0);
+                        Pedido p = mesa.poll(); // intenta coger un pedido
+                        if (p != null) {
+                            cocinerosEsperandoMs.addAndGet(System.currentTimeMillis() - t0);
 
-                        try {
-                            Thread.sleep(p.plato.tiempoMs); // cocina el plato
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
+                            try {
+                                Thread.sleep(p.plato.tiempoMs); // cocina el plato
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                            esperaTotalMs.addAndGet(System.currentTimeMillis() - p.horaCreacionMs());
+                            platosServidos.incrementAndGet();
+                            System.out.println("[" + ahora() + "] Cocinero-" + id + " termina "
+                                    + p.plato + " para Cliente-" + p.cliente());
+
+                            platosListos.put(p);
+                            System.out.println("[" + ahora() + "] Cocinero-" + id + " termina pedido de Cliente-" + p.cliente());
+                            }
+                        } catch(InterruptedException e){
+                            Thread.currentThread().interrupt(); // cierre del restaurante
                         }
-                        esperaTotalMs.addAndGet(System.currentTimeMillis() - p.horaCreacionMs());
-                        platosServidos.incrementAndGet();
-                        System.out.println("[" + ahora() + "] Cocinero-" + id + " termina "
-                                + p.plato + " para Cliente-" + p.cliente());
-
-                        platosListos.put(p);
-                        System.out.println("[" + ahora() + "] Cocinero-" + id + " termina pedido de Cliente-" + p.cliente());
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt(); // cierre del restaurante
-                    }
                 }
             })
             );
@@ -130,7 +137,7 @@ public class Ejercicio3 {
         for (int i = 1; i <= CAMAREROS; i++) {
             final int id = i;
             camareros.add(
-            Thread.ofPlatform().name("camarero-" + id).start(() -> {
+            Thread.ofVirtual().name("camarero-" + id).start(() -> {
 
                     while (abierto) {
                         try {
@@ -233,7 +240,7 @@ public class Ejercicio3 {
         });
 
 
-        cocineros.forEach(Thread::interrupt); //Necesitan interrupt porque take es bloqueante
+        //cocineros.forEach(Thread::interrupt); //Necesitan interrupt porque take es bloqueante
         cocineros.forEach(cocinero->{
             try {
                 cocinero.join();
