@@ -1,0 +1,176 @@
+Index: ../../psp/tresEnRaya/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"SetupCarrera:war\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bab44842-e06a-4899-9957-5afaefd03828\" name=\"Changes\" comment=\"tres en raya enhanced: setup y partida\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/domain/Corredor.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/domain/Tirada.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/compiler.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/compiler.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/Constants.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/GameConstants.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/MessageConstants.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/ThymeleafConstants.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/ThymeleafInitializer.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/config/UrlConstants.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Inscripciones.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/MainGame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/MainGame.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/SetupCarrera.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/domain/Torneo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/domain/Carrera.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/setupPartida.html\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/index.html\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/Constants.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/GameConstants.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/MessageConstants.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/ThymeleafConstants.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/ThymeleafInitializer.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/config/UrlConstants.class\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Record\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/../..\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"NextEditCompletionFeaturesState\">\r\n    <decayedCancelled>\r\n      <entry key=\"MS100\" value=\"0.0\" />\r\n      <entry key=\"MS500\" value=\"0.0\" />\r\n      <entry key=\"S2\" value=\"9.599978252249998E-110\" />\r\n      <entry key=\"S5\" value=\"3.560850513608059E-44\" />\r\n      <entry key=\"S10\" value=\"2.748799304005707E-22\" />\r\n      <entry key=\"S30\" value=\"1.4820179291712588E-7\" />\r\n      <entry key=\"S60\" value=\"8.779528355256946E-4\" />\r\n      <entry key=\"M2\" value=\"0.08995852152869512\" />\r\n      <entry key=\"M5\" value=\"2.8931769482486858\" />\r\n      <entry key=\"M10\" value=\"13.970170822334863\" />\r\n      <entry key=\"M15\" value=\"29.33802149392918\" />\r\n      <entry key=\"M30\" value=\"82.10940437891607\" />\r\n      <entry key=\"H1\" value=\"166.44280030901925\" />\r\n      <entry key=\"H2\" value=\"263.47452514607505\" />\r\n      <entry key=\"H4\" value=\"356.9033824294684\" />\r\n      <entry key=\"D1\" value=\"605.599607576339\" />\r\n      <entry key=\"W1\" value=\"892.2209055887838\" />\r\n    </decayedCancelled>\r\n    <decayedSelected>\r\n      <entry key=\"MS100\" value=\"1.0\" />\r\n      <entry key=\"MS500\" value=\"1.0\" />\r\n      <entry key=\"S2\" value=\"1.0\" />\r\n      <entry key=\"S5\" value=\"1.0\" />\r\n      <entry key=\"S10\" value=\"1.0\" />\r\n      <entry key=\"S30\" value=\"1.0000042749120512\" />\r\n      <entry key=\"S60\" value=\"1.002396930197914\" />\r\n      <entry key=\"M2\" value=\"1.0923984416828307\" />\r\n      <entry key=\"M5\" value=\"3.176886832320439\" />\r\n      <entry key=\"M10\" value=\"11.457787018270812\" />\r\n      <entry key=\"M15\" value=\"22.21412874603569\" />\r\n      <entry key=\"M30\" value=\"53.86127055463728\" />\r\n      <entry key=\"H1\" value=\"96.84596677882155\" />\r\n      <entry key=\"H2\" value=\"141.78186070988278\" />\r\n      <entry key=\"H4\" value=\"183.17830474723615\" />\r\n      <entry key=\"D1\" value=\"280.128277014201\" />\r\n      <entry key=\"W1\" value=\"374.0594533368017\" />\r\n    </decayedSelected>\r\n    <decayedShown>\r\n      <entry key=\"MS100\" value=\"0.0040721318782856305\" />\r\n      <entry key=\"MS500\" value=\"0.33263226027017156\" />\r\n      <entry key=\"S2\" value=\"0.7594358449072649\" />\r\n      <entry key=\"S5\" value=\"0.895769841551761\" />\r\n      <entry key=\"S10\" value=\"0.9464511828677489\" />\r\n      <entry key=\"S30\" value=\"0.9818262827217146\" />\r\n      <entry key=\"S60\" value=\"0.9941110477661482\" />\r\n      <entry key=\"M2\" value=\"1.176907817128374\" />\r\n      <entry key=\"M5\" value=\"6.057950115107216\" />\r\n      <entry key=\"M10\" value=\"25.400621895212037\" />\r\n      <entry key=\"M15\" value=\"51.513536456411835\" />\r\n      <entry key=\"M30\" value=\"135.9174620980486\" />\r\n      <entry key=\"H1\" value=\"263.2367408399647\" />\r\n      <entry key=\"H2\" value=\"405.2161305816643\" />\r\n      <entry key=\"H4\" value=\"540.0543115163883\" />\r\n      <entry key=\"D1\" value=\"885.7198401614892\" />\r\n      <entry key=\"W1\" value=\"1266.2786792253548\" />\r\n    </decayedShown>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1,\r\n  &quot;fromUser&quot;: false\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3LJymnAHiqcgk4doMdaCs1rmPwu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"RunOnceActivity.typescript.service.memoryLimit.init\": \"true\",\r\n    \"Tomcat Server.tomcatch.executor\": \"Run\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"junie.onboarding.icon.badge.shown\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/madrid/Documents/dam2/psp/tresEnRaya\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.jshint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.jshint\": \"\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Artifacts\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"to.speed.mode.migration.done\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\2dam\\Desktop\\dam2\\psp\\tresEnRaya\\src\\main\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"org.example\" />\r\n      <recent name=\"config\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationStatuses\">\r\n      <map>\r\n        <entry key=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\">\r\n          <value>\r\n            <map>\r\n              <entry key=\"tomcatch\" value=\"STOPPED\" />\r\n            </map>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"tomcatch\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 11.0.27\" ALTERNATIVE_JRE_ENABLED=\"false\">\r\n      <option name=\"OPEN_IN_BROWSER_URL\" value=\"http://localhost:8080/setup\" />\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"SetupCarrera:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"1cfc9e8b-020e-42f7-9d09-4adfbb18031f\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"60076\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"SetupCarrera:war\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bab44842-e06a-4899-9957-5afaefd03828\" name=\"Changes\" comment=\"\" />\r\n      <created>1793186629661</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1793186629661</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"tres en raya casi completado\" />\r\n    <MESSAGE value=\"tres en raya enhanced: setup y partida\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"tres en raya enhanced: setup y partida\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/../../psp/tresEnRaya/.idea/workspace.xml b/../../psp/tresEnRaya/.idea/workspace.xml
+--- a/../../psp/tresEnRaya/.idea/workspace.xml	(revision a6f478f7f7ea48d0403d1e002b9f9d0b34180e93)
++++ b/../../psp/tresEnRaya/.idea/workspace.xml	(date 1794482441050)
+@@ -9,35 +9,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="tres en raya enhanced: setup y partida">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Corredor.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Tirada.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/Constants.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/GameConstants.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/MessageConstants.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ThymeleafConstants.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ThymeleafInitializer.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/config/UrlConstants.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BorrarseTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Inscripciones.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estadisticas.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FinTorneo.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainGame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SetupPartida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SetupCarrera.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Partida.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Carrera.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/setupPartida.html" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/tresEnRaya.html" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/Constants.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/GameConstants.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/MessageConstants.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/ThymeleafConstants.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/ThymeleafInitializer.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/config/UrlConstants.class" beforeDir="false" />
+-    </list>
++    <list default="true" id="bab44842-e06a-4899-9957-5afaefd03828" name="Changes" comment="examen" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -69,61 +41,61 @@
+   </component>
+   <component name="NextEditCompletionFeaturesState">
+     <decayedCancelled>
+-      <entry key="MS100" value="0.0" />
+-      <entry key="MS500" value="0.0" />
+-      <entry key="S2" value="9.599978252249998E-110" />
+-      <entry key="S5" value="3.560850513608059E-44" />
+-      <entry key="S10" value="2.748799304005707E-22" />
+-      <entry key="S30" value="1.4820179291712588E-7" />
+-      <entry key="S60" value="8.779528355256946E-4" />
+-      <entry key="M2" value="0.08995852152869512" />
+-      <entry key="M5" value="2.8931769482486858" />
+-      <entry key="M10" value="13.970170822334863" />
+-      <entry key="M15" value="29.33802149392918" />
+-      <entry key="M30" value="82.10940437891607" />
+-      <entry key="H1" value="166.44280030901925" />
+-      <entry key="H2" value="263.47452514607505" />
+-      <entry key="H4" value="356.9033824294684" />
+-      <entry key="D1" value="605.599607576339" />
+-      <entry key="W1" value="892.2209055887838" />
++      <entry key="MS100" value="1.463310271948451" />
++      <entry key="MS500" value="1.972574438784923" />
++      <entry key="S2" value="2.8044968993922814" />
++      <entry key="S5" value="3.3756612838142077" />
++      <entry key="S10" value="3.6552922276560738" />
++      <entry key="S30" value="3.876868309459853" />
++      <entry key="S60" value="3.937367493771391" />
++      <entry key="M2" value="3.9855240872161497" />
++      <entry key="M5" value="5.477767995156215" />
++      <entry key="M10" value="14.02078020090929" />
++      <entry key="M15" value="27.514523561093775" />
++      <entry key="M30" value="77.51437188271277" />
++      <entry key="H1" value="161.49183193906632" />
++      <entry key="H2" value="260.2923868379757" />
++      <entry key="H4" value="356.0053983619318" />
++      <entry key="D1" value="608.2064881609735" />
++      <entry key="W1" value="895.9274102428772" />
+     </decayedCancelled>
+     <decayedSelected>
+-      <entry key="MS100" value="1.0" />
+-      <entry key="MS500" value="1.0" />
+-      <entry key="S2" value="1.0" />
+-      <entry key="S5" value="1.0" />
+-      <entry key="S10" value="1.0" />
+-      <entry key="S30" value="1.0000042749120512" />
+-      <entry key="S60" value="1.002396930197914" />
+-      <entry key="M2" value="1.0923984416828307" />
+-      <entry key="M5" value="3.176886832320439" />
+-      <entry key="M10" value="11.457787018270812" />
+-      <entry key="M15" value="22.21412874603569" />
+-      <entry key="M30" value="53.86127055463728" />
+-      <entry key="H1" value="96.84596677882155" />
+-      <entry key="H2" value="141.78186070988278" />
+-      <entry key="H4" value="183.17830474723615" />
+-      <entry key="D1" value="280.128277014201" />
+-      <entry key="W1" value="374.0594533368017" />
++      <entry key="MS100" value="0.0" />
++      <entry key="MS500" value="1.482015375736183E-173" />
++      <entry key="S2" value="6.20459126865337E-44" />
++      <entry key="S5" value="5.212970543979497E-18" />
++      <entry key="S10" value="2.2831930588497096E-9" />
++      <entry key="S30" value="0.001316788631467333" />
++      <entry key="S60" value="0.03637448338465089" />
++      <entry key="M2" value="0.20809403189871686" />
++      <entry key="M5" value="1.6366400169515265" />
++      <entry key="M10" value="8.22387415108038" />
++      <entry key="M15" value="17.8079157214015" />
++      <entry key="M30" value="48.224584832192754" />
++      <entry key="H1" value="91.6383984919009" />
++      <entry key="H2" value="137.9172685946068" />
++      <entry key="H4" value="180.66458317246847" />
++      <entry key="D1" value="279.4838913062753" />
++      <entry key="W1" value="373.936409435143" />
+     </decayedSelected>
+     <decayedShown>
+-      <entry key="MS100" value="0.0040721318782856305" />
+-      <entry key="MS500" value="0.33263226027017156" />
+-      <entry key="S2" value="0.7594358449072649" />
+-      <entry key="S5" value="0.895769841551761" />
+-      <entry key="S10" value="0.9464511828677489" />
+-      <entry key="S30" value="0.9818262827217146" />
+-      <entry key="S60" value="0.9941110477661482" />
+-      <entry key="M2" value="1.176907817128374" />
+-      <entry key="M5" value="6.057950115107216" />
+-      <entry key="M10" value="25.400621895212037" />
+-      <entry key="M15" value="51.513536456411835" />
+-      <entry key="M30" value="135.9174620980486" />
+-      <entry key="H1" value="263.2367408399647" />
+-      <entry key="H2" value="405.2161305816643" />
+-      <entry key="H4" value="540.0543115163883" />
+-      <entry key="D1" value="885.7198401614892" />
+-      <entry key="W1" value="1266.2786792253548" />
++      <entry key="MS100" value="1.4165772480053331" />
++      <entry key="MS500" value="1.9601300558672416" />
++      <entry key="S2" value="2.7999742593875165" />
++      <entry key="S5" value="3.3734586918681524" />
++      <entry key="S10" value="3.654094383575545" />
++      <entry key="S30" value="3.8777363572346415" />
++      <entry key="S60" value="3.9731935586325995" />
++      <entry key="M2" value="4.192471258549619" />
++      <entry key="M5" value="7.108123649958361" />
++      <entry key="M10" value="22.225011950847303" />
++      <entry key="M15" value="45.29146999667331" />
++      <entry key="M30" value="125.69130539267461" />
++      <entry key="H1" value="253.08099806348733" />
++      <entry key="H2" value="398.17049557989236" />
++      <entry key="H4" value="536.6429806306388" />
++      <entry key="D1" value="887.6823533905621" />
++      <entry key="W1" value="1269.862140508538" />
+     </decayedShown>
+   </component>
+   <component name="ProjectColorInfo">{
+@@ -142,6 +114,7 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "Tomcat Server.tomcatch.executor": "Run",
+     "codeWithMe.voiceChat.enabledByDefault": "false",
+     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+@@ -309,6 +282,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="tres en raya casi completado" />
+     <MESSAGE value="tres en raya enhanced: setup y partida" />
+-    <option name="LAST_COMMIT_MESSAGE" value="tres en raya enhanced: setup y partida" />
++    <MESSAGE value="examen" />
++    <option name="LAST_COMMIT_MESSAGE" value="examen" />
+   </component>
+ </project>
+\ No newline at end of file

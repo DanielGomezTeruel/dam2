@@ -35,6 +35,7 @@ public class Estadisticas extends HttpServlet {
         String numPartida = req.getParameter("numPartida");
 
 
+
         PrintWriter out = resp.getWriter();
         out.println("<!DOCTYPE html>");
         out.println("<html>");
